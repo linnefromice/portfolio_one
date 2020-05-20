@@ -106,13 +106,13 @@ const sub_profile = {
   name: "Profile",
   content: <Profile/>,
 };
-const key_sub_work_experience = "key_sub_work_experience";
+const key_sub_work_experience = "key_sub_work_experience"; // eslint-disable-line
 const sub_work_experience = {
   icon: <MdWork size="100%"/>,
   name: "Work Experience",
   content: <WorkExperience/>,
 };
-const key_sub_hobby = "key_sub_hobby";
+const key_sub_hobby = "key_sub_hobby"; // eslint-disable-line
 const sub_hobby = {
   icon: <MdFreeBreakfast size="100%"/>,
   name: "Hobby",
@@ -124,25 +124,25 @@ const accountMenuList = {
   key_sub_hobby: sub_hobby,
 };
 
-const key_study_record_app = "key_study_record_app";
+const key_study_record_app = "key_study_record_app"; // eslint-disable-line
 const study_record_app = {
   icon: <RiFlutterLine size="75%"/>,
   name: "study_record_app",
   content: <InfoStudyRecordApp/>,
 };
-const key_ff_quiz_app = "key_ff_quiz_app";
+const key_ff_quiz_app = "key_ff_quiz_app"; // eslint-disable-line
 const ff_quiz_app = {
   icon: <RiFlutterLine size="75%"/>,
   name: "ff_quiz_app",
   content: <InfoFFQuizApp/>,
 };
-const key_marvel_app = "key_marvel_data_app";
+const key_marvel_app = "key_marvel_data_app"; // eslint-disable-line
 const marvel_app = {
   icon: <RiFlutterLine size="75%"/>,
   name: "marvel_app",
   content: <InfoMarvelApp/>,
 };
-const key_other_products = "key_other_products";
+const key_other_products = "key_other_products"; // eslint-disable-line
 const other_products = {
   icon: <FaCode size="75%"/>,
   name: "Others",
@@ -182,13 +182,13 @@ const main_account_information = {
   name: "Account Information",
   subMenuList: accountMenuList,
 };
-const key_main_product = "key_main_product";
+const key_main_product = "key_main_product"; // eslint-disable-line
 const main_product = {
   icon: <FaCode size="100%"/>,
   name: "Product(private)",
   subMenuList: productMenuList,
 };
-const key_main_links = "key_main_links";
+const key_main_links = "key_main_links"; // eslint-disable-line
 const main_links = {
   icon: <FaLink size="100%"/>,
   name: "Links",

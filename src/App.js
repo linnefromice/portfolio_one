@@ -4,6 +4,7 @@ import Device from './component/device';
 import Content from './component/content';
 
 function App() {
+  /*
   const portfolioStyle = {
     position: "absolute",
     top: 0,
@@ -19,6 +20,7 @@ function App() {
       <h1>Portfolio</h1>
     </div>
   );
+  */
 
   return (
     <Container>
