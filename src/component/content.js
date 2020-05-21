@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
-import { animated, useSpring } from 'react-spring';
-import { config } from 'react-spring/renderprops';
+
+import { MainMenu, FocusedMainMenu } from './common/main_menu.js';
+import { SubMenu, FocusedSubMenu } from './common/sub_menu.js';
 
 import Profile from './contents/profile';
 import WorkExperience from './contents/work_experience';
@@ -13,87 +14,6 @@ import InfoFFQuizApp from './contents/info_ff_quiz_app';
 import InfoMarvelApp from './contents/info_marvel_app';
 import InfoOtherProducts from './contents/info_other_products';
 import './content.scss';
-
-const focusedMenuAnimationStyle = {
-  from: { opacity: "0.5", color: "silver" },
-  to: async (next, cancel) => {
-    await next({ opacity: "0.75", color: "#64f38c" });
-    await next({ opacity: "1", color: "#45B649" });
-  },
-  config: config.gentle
-};
-
-const MainMenu = ({icon, name, onClick}) => {
-  return (
-    <div
-      className="mainMenu"
-      style={{ opacity: "0.5", color: "silver" }}
-      onClick={onClick}
-    >
-      <div className="mainMenuIcon">
-        {icon}
-      </div>
-      <div className="mainMenuName">
-        <center>{name}</center>
-      </div>
-    </div>
-  )
-}
-
-const FocusedMainMenu = ({icon, name, onClick}) => {
-  const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
-
-  return (
-    <animated.div
-      className="mainMenu"
-      style={focusedMenuStyle}
-      onClick={onClick}
-    >
-      <div className="mainMenuIcon">
-        {icon}
-      </div>
-      <div className="mainMenuName">
-        <center >{name}</center>
-      </div>
-    </animated.div>
-  )
-}
-
-const SubMenu = ({icon, name, onClick}) => {
-  return (
-    <div
-      className="subMenu"
-      style={{ opacity: "0.5", color: "silver" }}
-      onClick={onClick}
-    >
-      <div className="subMenuIcon">
-        {icon}
-      </div>
-      <div className="subMenuName">
-        <center>{name}</center>
-      </div>
-    </div>
-  )
-}
-
-const FocusedSubMenu = ({icon, name, onClick}) => {
-  const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
-
-  return (
-    <animated.div
-      className="subMenu"
-      style={focusedMenuStyle}
-      onClick={onClick}
-    >
-      <div className="subMenuIcon">
-        {icon}
-      </div>
-      <div className="subMenuName">
-        <center>{name}</center>
-      </div>
-    </animated.div>
-  )
-}
 
 const key_sub_profile = "key_sub_profile";
 const sub_profile = {
