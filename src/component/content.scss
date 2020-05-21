@@ -17,6 +17,12 @@
   justify-content: center;
   align-items: center;
 }
+.mainMenu > .mainMenuIcon {
+  height: 80%
+}
+.mainMenu > .mainMenuName {
+  height: 20%
+}
 .wrapperSubMenu {
   position: absolute;
   top: 30vh;
@@ -36,6 +42,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+.subMenu > .subMenuIcon {
+  height: 80%
+}
+.subMenu > .subMenuName {
+  height: 20%
 }
 .wrapperContent {
   position: absolute;
