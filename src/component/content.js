@@ -70,7 +70,7 @@ const productMenuList = {
   key_other_products: other_products,
 };
 
-const key_link_github = "key_link_github";
+const key_link_github = "key_link_github"; // eslint-disable-line
 const link_github = {
   icon: <FaGithub size="100%"/>,
   name: "Github",

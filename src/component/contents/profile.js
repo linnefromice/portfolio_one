@@ -37,17 +37,15 @@ const Profile = () => {
       <Card style={{backgroundColor: "transparent", borderRadius: "2rem" }}>
         <CardContent>
           <center>
-            <Typography variant={"h5"}>About Me</Typography>
+            <Typography variant={"h6"}>About Me</Typography>
             <Avatar
-              style={{ width: "8vw", height: "100%"}}
+              style={{ width: "6vw", height: "100%"}}
               src="/contents/icon_account_resize.jpg"
             />
-            <Typography variant={"h5"}>Linnefromice</Typography>
+            <Typography variant={"h6"}>Linnefromice</Typography>
             <Typography>Hello, I'm a Web Developer from Japan.</Typography>
           </center>
-        </CardContent>
-        <CardContent>
-          <Typography variant={"h6"}>Work</Typography>
+          <Typography>Work</Typography>
           <div style={{ padding: 1 }}>
             <Chip style={{ margin: 0.5 }} label="Java" color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="JavaScript" color="primary" variant="outlined"/>
@@ -56,7 +54,7 @@ const Profile = () => {
             <Chip style={{ margin: 0.5 }} label="React" color="secondary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Oracle" color="secondary" variant="outlined"/>
           </div>
-          <Typography variant={"h6"}>Private</Typography>
+          <Typography>Private</Typography>
           <div style={{ padding: 1 }}>
             <Chip style={{ margin: 0.5 }} label="Dart" color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Flutter" color="primary" variant="outlined"/>
@@ -65,8 +63,6 @@ const Profile = () => {
             <Chip style={{ margin: 0.5 }} label="Kotlin" color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Docker" color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Firebase" color="primary" variant="outlined"/>
-          </div>
-          <div style={{ padding: 1 }}>
             <Chip style={{ margin: 0.5 }} label="Ruby" disabled color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Go" disabled color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Ruby on Rails" disabled color="secondary" variant="outlined"/>

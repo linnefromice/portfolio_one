@@ -8,6 +8,7 @@ import { MdRadio, MdMovie, MdMusicNote } from 'react-icons/md';
 import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } from 'react-icons/fa';
 
 import { animated, useSpring } from 'react-spring';
+import { makeStyles } from '@material-ui/core';
 
 const Wrapper = (props) => {
   const animatedStyle = useSpring({
@@ -84,14 +85,37 @@ const hobbyListTwo = [
   },
 ]
 
+const useStyles = makeStyles({
+  listItemStyle: {
+    padding: '0.5vh 0.5vw'
+  },
+  primaryTextStyle: {
+    fontSize: '0.8em'
+  },
+  secondaryTextStyle: {
+    fontSize: '0.6em'
+  }
+});
+
 const Hobby = () => {
+  const classes = useStyles();
+
   return (
     <Wrapper>
       <List>
         {hobbyListOne.map(value => (
-          <ListItem alignItems="flex-start">
+          <ListItem
+            classes={{
+              gutters: classes.listItemStyle
+            }}
+            alignItems="flex-start"
+          >
             <ListItemAvatar>{value.icon}</ListItemAvatar>
             <ListItemText
+              classes={{
+                primary: classes.primaryTextStyle,
+                secondary: classes.secondaryTextStyle,
+              }}
               primary={value.primary}
               secondary={value.secondary}
             />
@@ -100,9 +124,18 @@ const Hobby = () => {
       </List>
       <List>
         {hobbyListTwo.map(value => (
-          <ListItem alignItems="flex-start">
+          <ListItem
+            classes={{
+              gutters: classes.listItemStyle
+            }}
+            alignItems="flex-start"
+          >
             <ListItemAvatar>{value.icon}</ListItemAvatar>
             <ListItemText
+              classes={{
+                primary: classes.primaryTextStyle,
+                secondary: classes.secondaryTextStyle,
+              }}
               primary={value.primary}
               secondary={value.secondary}
             />
