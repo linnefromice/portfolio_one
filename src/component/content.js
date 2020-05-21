@@ -14,14 +14,14 @@ import InfoMarvelApp from './contents/info_marvel_app';
 import InfoOtherProducts from './contents/info_other_products';
 import './content.scss';
 
-const focusedMenuStyle = useSpring({
+const focusedMenuAnimationStyle = {
   from: { opacity: "0.5", color: "silver" },
   to: async (next, cancel) => {
     await next({ opacity: "0.75", color: "#64f38c" });
     await next({ opacity: "1", color: "#45B649" });
   },
   config: config.gentle
-});
+};
 
 const MainMenu = ({icon, name, onClick}) => {
   return (
@@ -41,6 +41,8 @@ const MainMenu = ({icon, name, onClick}) => {
 }
 
 const FocusedMainMenu = ({icon, name, onClick}) => {
+  const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
+
   return (
     <animated.div
       className="mainMenu"
@@ -75,6 +77,8 @@ const SubMenu = ({icon, name, onClick}) => {
 }
 
 const FocusedSubMenu = ({icon, name, onClick}) => {
+  const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
+
   return (
     <animated.div
       className="subMenu"
