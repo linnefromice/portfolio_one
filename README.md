@@ -32,5 +32,7 @@ firebase deploy
 
 ## References
 
+- [Until first deploy version](https://github.com/linnefromice/portfolio_practice/tree/master/react_one)
+
 - [uigradients.com](https://uigradients.com/) ... gradient samples
 - [vectr.com](https://vectr.com/) ... svg creating tool
