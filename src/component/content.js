@@ -123,6 +123,7 @@ const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
           if (value === focusedKey) {
             return (
               <FocusedMainMenu
+                key={`${value}.${index}`}
                 icon={menuList[value].icon}
                 name={menuList[value].name}
                 onClick={() => setFocusedKey(value)}
@@ -131,6 +132,7 @@ const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
           } else {
             return (
               <MainMenu
+                key={`${value}.${index}`}
                 icon={menuList[value].icon}
                 name={menuList[value].name}
                 onClick={() => setFocusedKey(value)}
@@ -152,6 +154,7 @@ const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
             if (menuList[value].onClick === undefined) {
               return (
                 <FocusedSubMenu
+                  key={`${value}.${index}`}
                   icon={menuList[value].icon}
                   name={menuList[value].name}
                   onClick={() => setFocusedKey(value)}
@@ -160,6 +163,7 @@ const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
             } else {
               return (
                 <FocusedSubMenu
+                  key={`${value}.${index}`}
                   icon={menuList[value].icon}
                   name={menuList[value].name}
                   onClick={menuList[value].onClick}
@@ -170,6 +174,7 @@ const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
             if (menuList[value].onClick === undefined) {
               return (
                 <SubMenu
+                  key={`${value}.${index}`}
                   icon={menuList[value].icon}
                   name={menuList[value].name}
                   onClick={() => setFocusedKey(value)}
@@ -178,6 +183,7 @@ const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
             } else {
               return (
                 <SubMenu
+                  key={`${value}.${index}`}
                   icon={menuList[value].icon}
                   name={menuList[value].name}
                   onClick={menuList[value].onClick}
