@@ -115,80 +115,90 @@ const mainMenuList = {
   key_main_links: main_links
 };
 
+const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
+  return (
+    <div className="wrapperMainMenu">
+      {
+        Object.keys(menuList).map((value, index) => {
+          if (value === focusedKey) {
+            return (
+              <FocusedMainMenu
+                icon={menuList[value].icon}
+                name={menuList[value].name}
+                onClick={() => setFocusedKey(value)}
+              />
+            );
+          } else {
+            return (
+              <MainMenu
+                icon={menuList[value].icon}
+                name={menuList[value].name}
+                onClick={() => setFocusedKey(value)}
+              />
+            );
+          }
+        })
+      }
+    </div>
+  );
+}
+
+const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
+  return (
+    <div className="wrapperSubMenu">
+      {
+        Object.keys(menuList).map((value, index) => {
+          if (value === focusedKey) {
+            if (menuList[value].onClick === undefined) {
+              return (
+                <FocusedSubMenu
+                  icon={menuList[value].icon}
+                  name={menuList[value].name}
+                  onClick={() => setFocusedKey(value)}
+                />
+              ); 
+            } else {
+              return (
+                <FocusedSubMenu
+                  icon={menuList[value].icon}
+                  name={menuList[value].name}
+                  onClick={menuList[value].onClick}
+                />
+              ); 
+            }
+          } else {
+            if (menuList[value].onClick === undefined) {
+              return (
+                <SubMenu
+                  icon={menuList[value].icon}
+                  name={menuList[value].name}
+                  onClick={() => setFocusedKey(value)}
+                />
+              ); 
+            } else {
+              return (
+                <SubMenu
+                  icon={menuList[value].icon}
+                  name={menuList[value].name}
+                  onClick={menuList[value].onClick}
+                />
+              ); 
+            }
+          }
+        })
+      }
+    </div>
+  );
+}
+
 const Content = () => {
   const [focusedMainMenuKey, setFocusedMainMenuKey] = useState(key_main_account_information);
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState(key_sub_profile);
-  
+
   return (
     <div>
-      <div className="wrapperMainMenu">
-        {
-          Object.keys(mainMenuList).map((value, index) => {
-            if (value === focusedMainMenuKey) {
-              return (
-                <FocusedMainMenu
-                  icon={mainMenuList[value].icon}
-                  name={mainMenuList[value].name}
-                  onClick={() => setFocusedMainMenuKey(value)}
-                />
-              );
-            } else {
-              return (
-                <MainMenu
-                  icon={mainMenuList[value].icon}
-                  name={mainMenuList[value].name}
-                  onClick={() => setFocusedMainMenuKey(value)}
-                />
-              );
-            }
-          })
-        }
-      </div>
-      <div className="wrapperSubMenu">
-        {
-          Object.keys(mainMenuList[focusedMainMenuKey].subMenuList).map((value, index) => {
-            const subMenuList = mainMenuList[focusedMainMenuKey].subMenuList;
-            console.log(subMenuList[value].onClick)
-            if (value === focusedSubMenuKey) {
-              if (subMenuList[value].onClick === undefined) {
-                return (
-                  <FocusedSubMenu
-                    icon={subMenuList[value].icon}
-                    name={subMenuList[value].name}
-                    onClick={() => setFocusedSubMenuKey(value)}
-                  />
-                ); 
-              } else {
-                return (
-                  <FocusedSubMenu
-                    icon={subMenuList[value].icon}
-                    name={subMenuList[value].name}
-                    onClick={subMenuList[value].onClick}
-                  />
-                ); 
-              }
-            } else {
-              if (subMenuList[value].onClick === undefined) {
-                return (
-                  <SubMenu
-                    icon={subMenuList[value].icon}
-                    name={subMenuList[value].name}
-                    onClick={() => setFocusedSubMenuKey(value)}
-                  />
-                ); 
-              } else {
-                return (
-                  <SubMenu
-                    icon={subMenuList[value].icon}
-                    name={subMenuList[value].name}
-                    onClick={subMenuList[value].onClick}
-                  />
-                ); 
-              }
-            }
-          })
-        }
-      </div>
+      <MainMenuList focusedKey={focusedMainMenuKey} setFocusedKey={setFocusedMainMenuKey} menuList={mainMenuList} />
+      <SubMenuList focusedKey={focusedSubMenuKey} setFocusedKey={setFocusedSubMenuKey} menuList={mainMenuList[focusedMainMenuKey].subMenuList} />
       <div className="wrapperContent">
         {subMenuList[focusedSubMenuKey].content}
       </div>
