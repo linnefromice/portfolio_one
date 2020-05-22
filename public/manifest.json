@@ -3,17 +3,17 @@
   "name": "Portfolio - linnefromice",
   "icons": [
     {
-      "src": "content/icon_account_resize.jpg",
+      "src": "contents/icon_account_resize.jpg",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/jpg"
     },
     {
-      "src": "content/icon_account_resize.jpg",
+      "src": "contents/icon_account_resize.jpg",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "content/icon_account_resize.jpg",
+      "src": "contents/icon_account_resize.jpg",
       "type": "image/jpg",
       "sizes": "512x512"
     }
