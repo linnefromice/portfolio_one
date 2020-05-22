@@ -103,8 +103,9 @@ const Hobby = () => {
   return (
     <Wrapper>
       <List>
-        {hobbyListOne.map(value => (
+        {hobbyListOne.map((value, index) => (
           <ListItem
+            key={`hobby.list_one.${index}`}
             classes={{
               gutters: classes.listItemStyle
             }}
@@ -123,8 +124,9 @@ const Hobby = () => {
         ))}
       </List>
       <List>
-        {hobbyListTwo.map(value => (
+        {hobbyListTwo.map((value, index) => (
           <ListItem
+            key={`hobby.list_two.${index}`}
             classes={{
               gutters: classes.listItemStyle
             }}
