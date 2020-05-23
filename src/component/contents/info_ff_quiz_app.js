@@ -7,35 +7,11 @@ import Divider from '@material-ui/core/Divider';
 import Chip from '@material-ui/core/Chip';
 import IconButton from '@material-ui/core/IconButton';
 import { FaGithub, FaLink, FaWikipediaW } from 'react-icons/fa';
-import { animated, useSpring } from 'react-spring';
-
-const Wrapper = (props) => {
-  const animatedStyle = useSpring({
-    from: { opacity: "0" },
-    to: { opacity: "1" },
-  });
-
-  return (
-    <animated.div
-      style={animatedStyle}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          flexDirection: "row",
-        }}
-      >
-        {props.children}
-      </div>
-    </animated.div>
-  );
-}
+import InfoWrapper from '../common/info_wrapper';
 
 const InfoFFQuizApp = () => {
   return (
-    <Wrapper>
+    <InfoWrapper>
       <Card
         style={{
           display: "flex",
@@ -102,7 +78,7 @@ const InfoFFQuizApp = () => {
           title="Sample"
         />
       </Card>
-    </Wrapper>
+    </InfoWrapper>
   );
 }
 
