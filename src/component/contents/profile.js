@@ -34,7 +34,9 @@ const Wrapper = (props) => {
 const Profile = () => {
   return (
     <Wrapper>
-      <Card style={{backgroundColor: "transparent", borderRadius: "2rem" }}>
+      <Card
+        style={{backgroundColor: "transparent", borderRadius: "2rem" }}
+      >
         <CardContent>
           <center>
             <Typography variant={"h6"}>About Me</Typography>

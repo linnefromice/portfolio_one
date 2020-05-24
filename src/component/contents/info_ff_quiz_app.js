@@ -68,14 +68,22 @@ const InfoFFQuizApp = () => {
           </div>
         </CardContent>
         <CardMedia
-          style={{ padding: 1, width: "20vw", height: "50vh" }}
+          style={{
+            padding: 1,
+            width: "20vw",
+            height: "50vh"
+          }}
           image="/contents/ff_quiz_ver1.png"
-          title="Sample"
+          title="sample_one"
         />
         <CardMedia
-          style={{ padding: 1, width: "20vw", height: "50vh" }}
+          style={{
+            padding: 1,
+            width: "20vw",
+            height: "50vh"
+          }}
           image="/contents/ff_quiz_ver2.png"
-          title="Sample"
+          title="sample_two"
         />
       </Card>
     </InfoWrapper>

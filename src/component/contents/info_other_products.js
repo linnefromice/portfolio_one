@@ -77,7 +77,7 @@ const VuetifyNewsAppCard = () => {
           />
           <Chip
             style={{ margin: 1 }}
-            label="@fortawesome"
+            label="fortawesome"
             color="secondary"
             variant="outlined"
           />
@@ -130,7 +130,13 @@ const SlideVueCard = () => {
           />
           <Chip
             style={{ margin: 1 }}
-            label="marp"
+            label="marp-vue"
+            color="secondary"
+            variant="outlined"
+          />
+          <Chip
+            style={{ margin: 1 }}
+            label="marp-core"
             color="secondary"
             variant="outlined"
           />
