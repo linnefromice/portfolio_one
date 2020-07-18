@@ -51,10 +51,12 @@ const WorkExperience = () => {
         </ListItem>
         <ListItem alignItems="flex-start">
           <ListItemText
-            primary="New employment"
+            primary="Money Forward, Inc."
             secondary={
               <React.Fragment>
-                <Typography component="span" variant="body1">2020.6 -</Typography>
+                <Typography component="span" variant="body1">2020.6 -<br/></Typography>
+                <Typography component="span" variant="body2">- Crosscutting product improvement/development for BtoB Services.<br/></Typography>
+                <Typography component="span" variant="body2">- Ruby(Rails), MySQL, Redis, GCP...<br/></Typography>
               </React.Fragment>
             }
           />
