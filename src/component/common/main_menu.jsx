@@ -1,7 +1,7 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
 import { config } from 'react-spring/renderprops';
-import './main_menu.scss';
+// import './main_menu.scss';
 
 const focusedMenuAnimationStyle = {
   from: { opacity: "0.5", color: "silver" },

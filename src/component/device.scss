@@ -32,7 +32,7 @@
 .back_stream_top {
   opacity: 0.50;
   border-radius: 5rem;
-  background-image: url(../resource/stream_top.svg);
+  // background-image: url(../resource/stream_top.svg);
   background-size: 200% 100%;
   background-repeat: no-repeat;
   animation: animate_stream 20s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
@@ -40,7 +40,7 @@
 .back_stream_bottom {
   opacity: 0.25;
   border-radius: 5rem;
-  background-image: url(../resource/stream_bottom.svg);
+  // background-image: url(../resource/stream_bottom.svg);
   background-size: 200% 100%;
   background-repeat: no-repeat;
   animation: animate_stream 60s linear infinite alternate; /* cubic-bezier(.445, .05, .55, .95) easeInOutSine */
@@ -63,7 +63,7 @@
   left: 0;
   overflow: hidden;
   margin-right: 5vw;
-  background: url(../resource/button_left.svg);
+  // background: url(../resource/button_left.svg);
   background-position: right;
   background-size: 150% 150%;
   background-repeat: no-repeat;
@@ -74,7 +74,7 @@
   right: 0;
   overflow: hidden;
   margin-left: 5vw;
-  background: url(../resource/button_right.svg);
+  // background: url(../resource/button_right.svg);
   background-position: left;
   background-size: 150% 150%;
   background-repeat: no-repeat;

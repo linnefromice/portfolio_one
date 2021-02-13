@@ -3,8 +3,8 @@ import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
 
-import { MainMenu, FocusedMainMenu } from './common/main_menu.js';
-import { SubMenu, FocusedSubMenu } from './common/sub_menu.js';
+import { MainMenu, FocusedMainMenu } from './common/main_menu.jsx';
+import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
 
 import Profile from './contents/profile';
 import WorkExperience from './contents/work_experience';
@@ -13,7 +13,7 @@ import InfoStudyRecordApp from './contents/info_study_record_app';
 import InfoFFQuizApp from './contents/info_ff_quiz_app';
 import InfoMarvelApp from './contents/info_marvel_app';
 import InfoOtherProducts from './contents/info_other_products';
-import './content.scss';
+// import './content.scss';
 
 const key_sub_profile = "key_sub_profile";
 const sub_profile = {
