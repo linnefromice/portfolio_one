@@ -8,7 +8,6 @@ const options = {
     bundle: true,
     target: 'es2020',
     platform: 'browser',
-    loader: { '.svg': 'text' },
     plugins: [ sassPlugin({ sourceMap: true }) ],
     outdir: path.resolve(__dirname, 'build'),
 }
