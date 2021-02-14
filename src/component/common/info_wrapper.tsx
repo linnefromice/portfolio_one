@@ -1,6 +1,6 @@
 import React from 'react';
 import { animated, useSpring } from 'react-spring';
-import './info_wrapper.scss';
+// import './info_wrapper.scss';
 
 const InfoWrapper = (props) => {
   const animatedStyle = useSpring({
