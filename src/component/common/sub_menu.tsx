@@ -12,7 +12,7 @@ const focusedMenuAnimationStyle = {
   config: config.gentle
 };
 
-const SubMenu = ({icon, name, onClick}) => {
+const SubMenu: React.FC = ({icon, name, onClick}) => {
   return (
     <div
       className="subMenu"
@@ -29,7 +29,7 @@ const SubMenu = ({icon, name, onClick}) => {
   )
 }
 
-const FocusedSubMenu = ({icon, name, onClick}) => {
+const FocusedSubMenu: React.FC = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (

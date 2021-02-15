@@ -115,7 +115,7 @@ const mainMenuList = {
   key_main_links: main_links
 };
 
-const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
+const MainMenuList: React.FC = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
@@ -145,7 +145,7 @@ const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
   );
 }
 
-const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
+const SubMenuList: React.FC = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperSubMenu">
       {
@@ -197,7 +197,7 @@ const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
   );
 }
 
-const Content = () => {
+const Content: React.FC = () => {
   const [focusedMainMenuKey, setFocusedMainMenuKey] = useState(key_main_account_information);
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState(key_sub_profile);
 

@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub } from 'react-icons/fa';
 import InfoWrapper from '../common/info_wrapper';
 
-const InfoStudyRecordApp = () => {
+const InfoStudyRecordApp: React.FC = () => {
   return (
     <InfoWrapper>
       <Card

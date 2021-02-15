@@ -10,7 +10,7 @@ import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } fro
 import { animated, useSpring } from 'react-spring';
 import { makeStyles } from '@material-ui/core';
 
-const Wrapper = (props) => {
+const Wrapper: React.FC = (props) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -97,7 +97,7 @@ const useStyles = makeStyles({
   }
 });
 
-const Hobby = () => {
+const Hobby: React.FC = () => {
   const classes = useStyles();
 
   return (

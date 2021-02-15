@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub, FaLink, FaWikipediaW } from 'react-icons/fa';
 import InfoWrapper from '../common/info_wrapper';
 
-const InfoFFQuizApp = () => {
+const InfoFFQuizApp: React.FC = () => {
   return (
     <InfoWrapper>
       <Card

@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper = (props) => {
+const Wrapper: React.FC = (props) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },

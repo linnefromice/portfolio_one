@@ -12,7 +12,7 @@ const focusedMenuAnimationStyle = {
   config: config.gentle
 };
 
-const MainMenu = ({icon, name, onClick}) => {
+const MainMenu: React.FC = ({icon, name, onClick}) => {
   return (
     <div
       className="mainMenu"
@@ -29,7 +29,7 @@ const MainMenu = ({icon, name, onClick}) => {
   )
 }
 
-const FocusedMainMenu = ({icon, name, onClick}) => {
+const FocusedMainMenu: React.FC = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (

@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub } from 'react-icons/fa';
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper = (props) => {
+const Wrapper: React.FC = (props) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },

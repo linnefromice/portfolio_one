@@ -1,7 +1,7 @@
 import React from 'react';
 // import './device.scss';
 
-const Device = props => {
+const Device: React.FC = props => {
   return (
     <div className="device">
       <LeftButton/>
@@ -13,7 +13,7 @@ const Device = props => {
   )
 }
 
-const Screen = props => (
+const Screen: React.FC = props => (
   <div className="screen">
     <div
       className="screen_content back_stream_top"
@@ -34,7 +34,7 @@ const Screen = props => (
   </div>
 )
 
-const LeftButton = () => (
+const LeftButton: React.FC = () => (
   <div
     className="left_button"
     style={{
@@ -43,7 +43,7 @@ const LeftButton = () => (
   ></div>
 );
 
-const RightButton = () => (
+const RightButton: React.FC = () => (
   <div
     className="right_button"
     style={{

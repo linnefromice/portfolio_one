@@ -3,7 +3,7 @@ import './App.scss';
 import Device from './component/device';
 import Content from './component/content';
 
-function App() {
+const App: React.FC = props => {
   /*
   const portfolioStyle = {
     position: "absolute",
@@ -31,7 +31,7 @@ function App() {
   );
 }
 
-const Container = props => {
+const Container: React.FC = props => {
   return (
     <div className="Container">
       {props.children}
