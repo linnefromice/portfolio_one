@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper: React.FC = (props) => {
+const Wrapper: React.FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -24,7 +24,7 @@ const Wrapper: React.FC = (props) => {
           flexDirection: "row",
         }}
       >
-        {props.children}
+        {children}
       </div>
     </animated.div>
   );

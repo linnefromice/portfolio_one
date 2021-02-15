@@ -2,7 +2,7 @@ import React from 'react';
 import { animated, useSpring } from 'react-spring';
 // import './info_wrapper.scss';
 
-const InfoWrapper: React.FC = (props) => {
+const InfoWrapper: React.FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -13,7 +13,7 @@ const InfoWrapper: React.FC = (props) => {
       style={animatedStyle}
     >
       <div className="info_wrapper">
-        {props.children}
+        {children}
       </div>
     </animated.div>
   );

@@ -10,7 +10,7 @@ import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } fro
 import { animated, useSpring } from 'react-spring';
 import { makeStyles } from '@material-ui/core';
 
-const Wrapper: React.FC = (props) => {
+const Wrapper: React.FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -28,7 +28,7 @@ const Wrapper: React.FC = (props) => {
           flexDirection: "row",
         }}
       >
-        {props.children}
+        {children}
       </div>
     </animated.div>
   );

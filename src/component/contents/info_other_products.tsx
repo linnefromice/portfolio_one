@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub } from 'react-icons/fa';
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper: React.FC = (props) => {
+const Wrapper: React.FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -25,7 +25,7 @@ const Wrapper: React.FC = (props) => {
           alignItems: "center",
         }}
       >
-        {props.children}
+        {children}
       </div>
     </animated.div>
   );

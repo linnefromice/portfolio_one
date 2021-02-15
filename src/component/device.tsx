@@ -1,19 +1,19 @@
 import React from 'react';
 // import './device.scss';
 
-const Device: React.FC = props => {
+const Device: React.FC = ({ children }) => {
   return (
     <div className="device">
       <LeftButton/>
         <Screen>
-          {props.children}
+          {children}
         </Screen>
       <RightButton/>
     </div>
   )
 }
 
-const Screen: React.FC = props => (
+const Screen: React.FC = ({ children }) => (
   <div className="screen">
     <div
       className="screen_content back_stream_top"
@@ -29,7 +29,7 @@ const Screen: React.FC = props => (
       ></div>
     </div>
     <div className="screen_content">
-      {props.children}
+      {children}
     </div>
   </div>
 )
