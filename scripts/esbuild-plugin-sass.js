@@ -1,4 +1,4 @@
-const { render } = require('node-sass')
+const { render } = require('node-sass') // eslint-disable-line @typescript-eslint/no-var-requires
 
 const sassPlugin = (options) => ({
   name: "esbuild-plugin-sass",
