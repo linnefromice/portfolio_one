@@ -1,6 +1,6 @@
-const esbuild = require('esbuild')
-const path = require('path')
-const sassPlugin = require('./scripts/esbuild-plugin-sass')
+const esbuild = require('esbuild') // eslint-disable-line @typescript-eslint/no-var-requires
+const path = require('path') // eslint-disable-line @typescript-eslint/no-var-requires
+const sassPlugin = require('./scripts/esbuild-plugin-sass') // eslint-disable-line @typescript-eslint/no-var-requires
 
 const options = {
     define: { 'process.env.NODE_ENV': process.env.NODE_ENV },
