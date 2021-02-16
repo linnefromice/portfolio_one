@@ -14,7 +14,7 @@ const focusedMenuAnimationStyle = {
 
 const SubMenu: React.FC = ({icon, name, onClick}) => {
   return (
-    <a onClick={onClick}>
+    <button onClick={onClick}>
       <div
         className="subMenu"
         style={{ opacity: "0.5", color: "silver" }}
@@ -26,7 +26,7 @@ const SubMenu: React.FC = ({icon, name, onClick}) => {
           <center>{name}</center>
         </div>
       </div>
-    </a>
+    </button>
   )
 }
 
