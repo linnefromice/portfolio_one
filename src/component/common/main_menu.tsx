@@ -14,18 +14,19 @@ const focusedMenuAnimationStyle = {
 
 const MainMenu: React.FC = ({icon, name, onClick}) => {
   return (
-    <div
-      className="mainMenu"
-      style={{ opacity: "0.5", color: "silver" }}
-      onClick={onClick}
-    >
-      <div className="mainMenuIcon">
-        {icon}
+    <a onClick={onClick}>
+      <div
+        className="mainMenu"
+        style={{ opacity: "0.5", color: "silver" }}
+      >
+        <div className="mainMenuIcon">
+          {icon}
+        </div>
+        <div className="mainMenuName">
+          <center>{name}</center>
+        </div>
       </div>
-      <div className="mainMenuName">
-        <center>{name}</center>
-      </div>
-    </div>
+    </a>
   )
 }
 
