@@ -45,7 +45,7 @@ const Profile: React.FC = () => {
               src="/contents/icon_account_resize.jpg"
             />
             <Typography variant={"h6"}>Linnefromice</Typography>
-            <Typography>Hello, I'm a Web Developer from Japan.</Typography>
+            <Typography>Hello, I&#39;m a Web Developer from Japan.</Typography>
           </center>
           <Typography>Work</Typography>
           <div style={{ padding: 1 }}>

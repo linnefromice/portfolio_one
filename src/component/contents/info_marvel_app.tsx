@@ -25,7 +25,7 @@ const InfoMarvelApp: React.FC = () => {
             marvel_app
           </Typography>
           <Typography color="textSecondary">
-            <span>We can get marvel's movies information, using Marvel Developer API.<br/></span>
+            <span>We can get marvel&#39;s movies information, using Marvel Developer API.<br/></span>
             <span>Architecture: Using bloc (& provider)<br/></span>
           </Typography>
           <Divider/>
