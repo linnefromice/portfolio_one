@@ -30,7 +30,7 @@ const Wrapper: React.FC = ({ children }) => {
   );
 }
 
-const WorkExperience = () => {
+const WorkExperience: React.FC = () => {
   return (
     <Wrapper>
       <List>

@@ -96,7 +96,7 @@ const VuetifyNewsAppCard = () => {
   );
 }
 
-const SlideVueCard = () => {
+const SlideVueCard: React.FC = () => {
   return (
     <Card
       style={{
@@ -161,7 +161,7 @@ const SlideVueCard = () => {
   );
 }
 
-const InfoOtherProducts = () => {
+const InfoOtherProducts: React.FC = () => {
   return (
     <Wrapper>
       <VuetifyNewsAppCard/>
