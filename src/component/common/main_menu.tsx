@@ -5,7 +5,7 @@ import { config } from 'react-spring/renderprops';
 
 const focusedMenuAnimationStyle = {
   from: { opacity: "0.5", color: "silver" },
-  to: async (next, cancel) => {
+  to: async (next) => {
     await next({ opacity: "0.75", color: "#64f38c" });
     await next({ opacity: "1", color: "#45B649" });
   },
