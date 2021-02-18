@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from '@material-ui/core/ListItemText';
@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper: React.FC = ({ children }) => {
+const Wrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -30,7 +30,7 @@ const Wrapper: React.FC = ({ children }) => {
   );
 }
 
-const WorkExperience: React.FC = () => {
+const WorkExperience: FC = () => {
   return (
     <Wrapper>
       <List>

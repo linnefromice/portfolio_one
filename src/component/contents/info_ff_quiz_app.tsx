@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub, FaLink, FaWikipediaW } from 'react-icons/fa';
 import InfoWrapper from '../common/info_wrapper';
 
-const InfoFFQuizApp: React.FC = () => {
+const InfoFFQuizApp: FC = () => {
   return (
     <InfoWrapper>
       <Card

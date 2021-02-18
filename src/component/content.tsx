@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
@@ -115,7 +115,7 @@ const mainMenuList = {
   key_main_links: main_links
 };
 
-const MainMenuList: React.FC = ({focusedKey, setFocusedKey, menuList}) => {
+const MainMenuList: FC = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
@@ -145,7 +145,7 @@ const MainMenuList: React.FC = ({focusedKey, setFocusedKey, menuList}) => {
   );
 }
 
-const SubMenuList: React.FC = ({focusedKey, setFocusedKey, menuList}) => {
+const SubMenuList: FC = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperSubMenu">
       {
@@ -197,7 +197,7 @@ const SubMenuList: React.FC = ({focusedKey, setFocusedKey, menuList}) => {
   );
 }
 
-const Content: React.FC = () => {
+const Content: FC = () => {
   const [focusedMainMenuKey, setFocusedMainMenuKey] = useState(key_main_account_information);
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState(key_sub_profile);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { config } from 'react-spring/renderprops';
 // import './main_menu.scss';
@@ -12,7 +12,7 @@ const focusedMenuAnimationStyle = {
   config: config.gentle
 };
 
-const MainMenu: React.FC = ({icon, name, onClick}) => {
+const MainMenu: FC = ({icon, name, onClick}) => {
   return (
     <button onClick={onClick}>
       <div
@@ -30,7 +30,7 @@ const MainMenu: React.FC = ({icon, name, onClick}) => {
   )
 }
 
-const FocusedMainMenu: React.FC = ({icon, name, onClick}) => {
+const FocusedMainMenu: FC = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (

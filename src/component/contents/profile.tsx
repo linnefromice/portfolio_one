@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper: React.FC = ({ children }) => {
+const Wrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -31,7 +31,7 @@ const Wrapper: React.FC = ({ children }) => {
   );
 }
 
-const Profile: React.FC = () => {
+const Profile: FC = () => {
   return (
     <Wrapper>
       <Card

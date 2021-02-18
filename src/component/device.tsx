@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { FC } from 'react';
 // import './device.scss';
 
-const Device: React.FC = ({ children }) => {
+const Device: FC = ({ children }) => {
   return (
     <div className="device">
       <LeftButton/>
@@ -13,7 +13,7 @@ const Device: React.FC = ({ children }) => {
   )
 }
 
-const Screen: React.FC = ({ children }) => (
+const Screen: FC = ({ children }) => (
   <div className="screen">
     <div
       className="screen_content back_stream_top"
@@ -34,7 +34,7 @@ const Screen: React.FC = ({ children }) => (
   </div>
 )
 
-const LeftButton: React.FC = () => (
+const LeftButton: FC = () => (
   <div
     className="left_button"
     style={{
@@ -43,7 +43,7 @@ const LeftButton: React.FC = () => (
   ></div>
 );
 
-const RightButton: React.FC = () => (
+const RightButton: FC = () => (
   <div
     className="right_button"
     style={{

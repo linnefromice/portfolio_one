@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { animated, useSpring } from 'react-spring';
 // import './info_wrapper.scss';
 
-const InfoWrapper: React.FC = ({ children }) => {
+const InfoWrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
