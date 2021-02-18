@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { config } from 'react-spring/renderprops';
+import { IconType } from 'react-icons'
 // import './sub_menu.scss';
 
 const focusedMenuAnimationStyle = {
@@ -12,7 +13,12 @@ const focusedMenuAnimationStyle = {
   config: config.gentle
 };
 
-const SubMenu: FC = ({icon, name, onClick}) => {
+type Props = {
+  icon: IconType,
+  name: string,
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+const SubMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
     <button onClick={onClick}>
       <div
@@ -30,7 +36,7 @@ const SubMenu: FC = ({icon, name, onClick}) => {
   )
 }
 
-const FocusedSubMenu: FC = ({icon, name, onClick}) => {
+const FocusedSubMenu: FC<Props> = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (

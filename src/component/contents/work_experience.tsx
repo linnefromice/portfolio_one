@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from '@material-ui/core/ListItemText';
@@ -6,7 +6,10 @@ import Typography from "@material-ui/core/Typography";
 
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper: FC = ({ children }) => {
+type Props = {
+  children: ReactNode;
+}
+const Wrapper: FC<Props> = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
