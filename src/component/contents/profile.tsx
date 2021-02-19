@@ -41,7 +41,7 @@ const Profile: FC = () => {
         style={{backgroundColor: "transparent", borderRadius: "2rem" }}
       >
         <CardContent>
-          <center>
+          <div style={{ textAlign: 'center' }}>
             <Typography variant={"h6"}>About Me</Typography>
             <Avatar
               style={{ width: "6vw", height: "100%"}}
@@ -49,7 +49,7 @@ const Profile: FC = () => {
             />
             <Typography variant={"h6"}>Linnefromice</Typography>
             <Typography>Hello, I&#39;m a Web Developer from Japan.</Typography>
-          </center>
+          </div>
           <Typography>Work</Typography>
           <div style={{ padding: 1 }}>
             <Chip style={{ margin: 0.5 }} label="Java" color="primary" variant="outlined"/>
