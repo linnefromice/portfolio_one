@@ -38,16 +38,17 @@ const FocusedMainMenu: FC<Props> = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (
-    <animated.div
-      className="mainMenu"
-      style={focusedMenuStyle}
-      onClick={onClick}
-    >
-      <div className="mainMenuIcon">
-        {icon}
-      </div>
-      <div className="mainMenuName">{name}</div>
-    </animated.div>
+    <button onClick={onClick}>
+      <animated.div
+        className="mainMenu"
+        style={focusedMenuStyle}
+      >
+        <div className="mainMenuIcon">
+          {icon}
+        </div>
+        <div className="mainMenuName">{name}</div>
+      </animated.div>
+    </button>
   )
 }
 

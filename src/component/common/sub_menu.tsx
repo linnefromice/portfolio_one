@@ -38,16 +38,17 @@ const FocusedSubMenu: FC<Props> = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (
-    <animated.div
-      className="subMenu"
-      style={focusedMenuStyle}
-      onClick={onClick}
-    >
-      <div className="subMenuIcon">
-        {icon}
-      </div>
-      <div className="subMenuName">{name}</div>
-    </animated.div>
+    <button onClick={onClick}>
+      <animated.div
+        className="subMenu"
+        style={focusedMenuStyle}
+      >
+        <div className="subMenuIcon">
+          {icon}
+        </div>
+        <div className="subMenuName">{name}</div>
+      </animated.div>
+    </button>
   )
 }
 
