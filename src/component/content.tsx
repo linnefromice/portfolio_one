@@ -21,6 +21,17 @@ type SubMenuType = {
   content: JSX.Element,
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
+type SubMenuListType = {
+  [key: string] : SubMenuType;
+}
+type MainMenuType = {
+  icon: JSX.Element,
+  name: string,
+  subMenuList: SubMenuListType
+}
+type MainMenuListType = {
+  [key: string] : MainMenuType;
+}
 
 const key_sub_profile = "key_sub_profile";
 const sub_profile: SubMenuType = {
@@ -40,7 +51,7 @@ const sub_hobby: SubMenuType = {
   name: "Hobby",
   content: <Hobby/>,
 };
-const accountMenuList = {
+const accountMenuList: SubMenuListType = {
   key_sub_profile: sub_profile,
   key_sub_work_experience: sub_work_experience,
   key_sub_hobby: sub_hobby,
@@ -70,7 +81,7 @@ const other_products: SubMenuType = {
   name: "Others",
   content: <InfoOtherProducts/>
 };
-const productMenuList = {
+const productMenuList: SubMenuListType = {
   key_study_record_app: study_record_app,
   key_ff_quiz_app: ff_quiz_app,
   key_marvel_app: marvel_app,
@@ -84,10 +95,10 @@ const link_github: SubMenuType = {
   content: <div></div>,
   onClick: () => window.open('https://github.com/linnefromice', '_blank')
 }
-const linkMenuList = {
+const linkMenuList: SubMenuListType = {
   key_link_github: link_github,
 };
-const subMenuList = {
+const subMenuList: SubMenuListType = {
   key_sub_profile: sub_profile,
   key_sub_work_experience: sub_work_experience,
   key_sub_hobby: sub_hobby,
@@ -98,11 +109,6 @@ const subMenuList = {
   key_link_github: link_github,
 }
 
-type MainMenuType = {
-  icon: JSX.Element,
-  name: string,
-  subMenuList: any // eslint-disable-line @typescript-eslint/no-explicit-any
-}
 const key_main_account_information = "key_main_account_information";
 const main_account_information: MainMenuType = {
   icon: <MdAccountCircle size="100%"/>,
@@ -121,7 +127,7 @@ const main_links: MainMenuType = {
   name: "Links",
   subMenuList: linkMenuList
 };
-const mainMenuList = {
+const mainMenuList: MainMenuListType = {
   key_main_account_information: main_account_information,
   key_main_product: main_product,
   key_main_links: main_links
@@ -161,7 +167,6 @@ const MainMenuList: FC<MenuListProps> = ({focusedKey, setFocusedKey, menuList}) 
     </div>
   );
 }
-
 const SubMenuList: FC<MenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperSubMenu">
