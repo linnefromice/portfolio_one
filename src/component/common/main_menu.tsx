@@ -19,16 +19,15 @@ type Props = {
 }
 const MainMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
-    <button onClick={onClick}>
-      <div
-        className="mainMenu"
-        style={{ opacity: "0.5", color: "silver" }}
-      >
-        <div className="mainMenuIcon">
-          {icon}
-        </div>
-        <div className="mainMenuName">{name}</div>
+    <button
+      onClick={onClick}
+      className="mainMenu"
+      style={{ opacity: "0.5", color: "silver" }}
+    >
+      <div className="mainMenuIcon">
+        {icon}
       </div>
+      <div className="mainMenuName">{name}</div>
     </button>
   )
 }
@@ -37,17 +36,16 @@ const FocusedMainMenu: FC<Props> = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (
-    <button onClick={onClick}>
-      <animated.div
-        className="mainMenu"
-        style={focusedMenuStyle}
-      >
-        <div className="mainMenuIcon">
-          {icon}
-        </div>
-        <div className="mainMenuName">{name}</div>
-      </animated.div>
-    </button>
+    <animated.button
+      onClick={onClick}
+      className="mainMenu"
+      style={focusedMenuStyle}
+    >
+      <div className="mainMenuIcon">
+        {icon}
+      </div>
+      <div className="mainMenuName">{name}</div>
+    </animated.button>
   )
 }
 

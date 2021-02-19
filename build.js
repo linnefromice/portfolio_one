@@ -9,7 +9,7 @@ const options = {
     target: 'es2020',
     platform: 'browser',
     plugins: [ sassPlugin({ sourceMap: true }) ],
-    outdir: path.resolve(__dirname, 'build'),
+    outdir: path.resolve(__dirname, 'public'),
 }
 esbuild.build(options).catch(err => {
     process.stderr.write(err.stderr)

@@ -58,8 +58,9 @@ const WorkExperience: FC = () => {
             secondary={
               <React.Fragment>
                 <Typography component="span" variant="body1">2020.6 -<br/></Typography>
-                <Typography component="span" variant="body2">- Crosscutting product improvement/development for BtoB Services.<br/></Typography>
-                <Typography component="span" variant="body2">- Ruby(Rails), MySQL, Redis, GCP...<br/></Typography>
+                <Typography component="span" variant="body2">20.6-20.12: Crosscutting product improvement/development for BtoB Services.<br/></Typography>
+                <Typography component="span" variant="body2">20.12-XX.XX: Renewal project for BtoB Services.<br/></Typography>
+                <Typography component="span" variant="body2">- Ruby(Rails), MySQL, Redis, TypeScript, Next.js, Docker, AWS, Kubernetes, Terraform...</Typography>
               </React.Fragment>
             }
           />
