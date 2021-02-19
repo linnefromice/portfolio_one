@@ -19,16 +19,15 @@ type Props = {
 }
 const SubMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
-    <button onClick={onClick}>
-      <div
-        className="subMenu"
-        style={{ opacity: "0.5", color: "silver" }}
-      >
-        <div className="subMenuIcon">
-          {icon}
-        </div>
-        <div className="subMenuName">{name}</div>
+    <button
+      onClick={onClick}
+      className="subMenu"
+      style={{ opacity: "0.5", color: "silver" }}
+    >
+      <div className="subMenuIcon">
+        {icon}
       </div>
+      <div className="subMenuName">{name}</div>
     </button>
   )
 }
@@ -37,17 +36,16 @@ const FocusedSubMenu: FC<Props> = ({icon, name, onClick}) => {
   const focusedMenuStyle = useSpring(focusedMenuAnimationStyle);
 
   return (
-    <button onClick={onClick}>
-      <animated.div
-        className="subMenu"
-        style={focusedMenuStyle}
-      >
-        <div className="subMenuIcon">
-          {icon}
-        </div>
-        <div className="subMenuName">{name}</div>
-      </animated.div>
-    </button>
+    <animated.button
+      onClick={onClick}
+      className="subMenu"
+      style={focusedMenuStyle}
+    >
+      <div className="subMenuIcon">
+        {icon}
+      </div>
+      <div className="subMenuName">{name}</div>
+    </animated.button>
   )
 }
 
