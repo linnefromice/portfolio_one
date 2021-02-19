@@ -41,7 +41,7 @@ const Profile: FC = () => {
         style={{backgroundColor: "transparent", borderRadius: "2rem" }}
       >
         <CardContent>
-          <div style={{ textAlign: 'center' }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
             <Typography variant={"h6"}>About Me</Typography>
             <Avatar
               style={{ width: "6vw", height: "100%"}}
@@ -58,19 +58,25 @@ const Profile: FC = () => {
             <Chip style={{ margin: 0.5 }} label="Spring" color="secondary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="React" color="secondary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Oracle" color="secondary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Ruby" color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Ruby on Rails" color="secondary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="TypeScript" disabled color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Next.js" disabled color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Docker" color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Kubernetes" color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Terraform" color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="AWS" disabled color="primary" variant="outlined"/>
           </div>
           <Typography>Private</Typography>
           <div style={{ padding: 1 }}>
             <Chip style={{ margin: 0.5 }} label="Dart" color="primary" variant="outlined"/>
-            <Chip style={{ margin: 0.5 }} label="Flutter" color="primary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="Flutter" color="secondary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Spring Boot" color="secondary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Vue" color="secondary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Kotlin" color="primary" variant="outlined"/>
-            <Chip style={{ margin: 0.5 }} label="Docker" color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Firebase" color="primary" variant="outlined"/>
-            <Chip style={{ margin: 0.5 }} label="Ruby" disabled color="primary" variant="outlined"/>
             <Chip style={{ margin: 0.5 }} label="Go" disabled color="primary" variant="outlined"/>
-            <Chip style={{ margin: 0.5 }} label="Ruby on Rails" disabled color="secondary" variant="outlined"/>
+            <Chip style={{ margin: 0.5 }} label="GCP" disabled color="primary" variant="outlined"/>
           </div>
         </CardContent>
       </Card>
