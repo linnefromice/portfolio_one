@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { config } from 'react-spring/renderprops';
-import { IconType } from 'react-icons'
 // import './main_menu.scss';
 
 const focusedMenuAnimationStyle = {
@@ -14,7 +13,7 @@ const focusedMenuAnimationStyle = {
 };
 
 type Props = {
-  icon: IconType,
+  icon: JSX.Element, // IconType,
   name: string,
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
