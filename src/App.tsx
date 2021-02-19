@@ -1,27 +1,9 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 import './App.scss';
 import Device from './component/device';
 import Content from './component/content';
 
-function App() {
-  /*
-  const portfolioStyle = {
-    position: "absolute",
-    top: 0,
-    left: 0,  
-    width: "100%",
-    height: "100%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  }
-  const dummyContent = () => (
-    <div style={portfolioStyle}>
-      <h1>Portfolio</h1>
-    </div>
-  );
-  */
-
+const App: FC = () => {
   return (
     <Container>
       <Device>
@@ -31,10 +13,13 @@ function App() {
   );
 }
 
-const Container = props => {
+type Props = {
+  children: ReactNode;
+}
+const Container: FC<Props> = ({ children }) => {
   return (
     <div className="Container">
-      {props.children}
+      {children}
     </div>
   );
 }

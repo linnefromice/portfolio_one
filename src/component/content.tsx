@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
@@ -15,72 +15,82 @@ import InfoMarvelApp from './contents/info_marvel_app';
 import InfoOtherProducts from './contents/info_other_products';
 // import './content.scss';
 
-const key_sub_profile = "key_sub_profile";
-const sub_profile = {
+type SubMenuType = {
+  icon: JSX.Element,
+  name: string,
+  content: JSX.Element,
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+type SubMenuListType = {
+  [key: string] : SubMenuType;
+}
+type MainMenuType = {
+  icon: JSX.Element,
+  name: string,
+  subMenuList: SubMenuListType
+}
+type MainMenuListType = {
+  [key: string] : MainMenuType;
+}
+
+const sub_profile: SubMenuType = {
   icon: <RiProfileLine size="100%"/>,
   name: "Profile",
   content: <Profile/>,
 };
-const key_sub_work_experience = "key_sub_work_experience"; // eslint-disable-line
-const sub_work_experience = {
+const sub_work_experience: SubMenuType = {
   icon: <MdWork size="100%"/>,
   name: "Work Experience",
   content: <WorkExperience/>,
 };
-const key_sub_hobby = "key_sub_hobby"; // eslint-disable-line
-const sub_hobby = {
+const sub_hobby: SubMenuType = {
   icon: <MdFreeBreakfast size="100%"/>,
   name: "Hobby",
   content: <Hobby/>,
 };
-const accountMenuList = {
+const accountMenuList: SubMenuListType = {
   key_sub_profile: sub_profile,
   key_sub_work_experience: sub_work_experience,
   key_sub_hobby: sub_hobby,
 };
 
-const key_study_record_app = "key_study_record_app"; // eslint-disable-line
-const study_record_app = {
+const study_record_app: SubMenuType = {
   icon: <RiFlutterLine size="75%"/>,
   name: "study_record_app",
   content: <InfoStudyRecordApp/>,
 };
-const key_ff_quiz_app = "key_ff_quiz_app"; // eslint-disable-line
-const ff_quiz_app = {
+const ff_quiz_app: SubMenuType = {
   icon: <RiFlutterLine size="75%"/>,
   name: "ff_quiz_app",
   content: <InfoFFQuizApp/>,
 };
-const key_marvel_app = "key_marvel_data_app"; // eslint-disable-line
-const marvel_app = {
+const marvel_app: SubMenuType = {
   icon: <RiFlutterLine size="75%"/>,
   name: "marvel_app",
   content: <InfoMarvelApp/>,
 };
-const key_other_products = "key_other_products"; // eslint-disable-line
-const other_products = {
+const other_products: SubMenuType = {
   icon: <FaCode size="75%"/>,
   name: "Others",
   content: <InfoOtherProducts/>
 };
-const productMenuList = {
+const productMenuList: SubMenuListType = {
   key_study_record_app: study_record_app,
   key_ff_quiz_app: ff_quiz_app,
   key_marvel_app: marvel_app,
   key_other_products: other_products,
 };
 
-const key_link_github = "key_link_github"; // eslint-disable-line
-const link_github = {
+const link_github: SubMenuType = {
   icon: <FaGithub size="100%"/>,
   name: "Github",
   content: <div></div>,
   onClick: () => window.open('https://github.com/linnefromice', '_blank')
 }
-const linkMenuList = {
+const linkMenuList: SubMenuListType = {
   key_link_github: link_github,
 };
-const subMenuList = {
+const subMenuList: SubMenuListType = {
   key_sub_profile: sub_profile,
   key_sub_work_experience: sub_work_experience,
   key_sub_hobby: sub_hobby,
@@ -91,31 +101,33 @@ const subMenuList = {
   key_link_github: link_github,
 }
 
-const key_main_account_information = "key_main_account_information";
-const main_account_information = {
+const main_account_information: MainMenuType = {
   icon: <MdAccountCircle size="100%"/>,
   name: "Account Information",
   subMenuList: accountMenuList,
 };
-const key_main_product = "key_main_product"; // eslint-disable-line
-const main_product = {
+const main_product: MainMenuType = {
   icon: <FaCode size="100%"/>,
   name: "Product(private)",
   subMenuList: productMenuList,
 };
-const key_main_links = "key_main_links"; // eslint-disable-line
-const main_links = {
+const main_links: MainMenuType = {
   icon: <FaLink size="100%"/>,
   name: "Links",
   subMenuList: linkMenuList
 };
-const mainMenuList = {
+const mainMenuList: MainMenuListType = {
   key_main_account_information: main_account_information,
   key_main_product: main_product,
   key_main_links: main_links
 };
 
-const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
+type MainMenuListProps = {
+  focusedKey: string,
+  setFocusedKey: React.Dispatch<React.SetStateAction<string>>,
+  menuList: MainMenuListType
+}
+const MainMenuList: FC<MainMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
@@ -144,8 +156,12 @@ const MainMenuList = ({focusedKey, setFocusedKey, menuList}) => {
     </div>
   );
 }
-
-const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
+type SubMenuListProps = {
+  focusedKey: string,
+  setFocusedKey: React.Dispatch<React.SetStateAction<string>>,
+  menuList: any
+}
+const SubMenuList: FC<SubMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperSubMenu">
       {
@@ -197,7 +213,7 @@ const SubMenuList = ({focusedKey, setFocusedKey, menuList}) => {
   );
 }
 
-const Content = () => {
+const Content: FC = () => {
   const [focusedMainMenuKey, setFocusedMainMenuKey] = useState(key_main_account_information);
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState(key_sub_profile);
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -7,7 +7,10 @@ import Typography from "@material-ui/core/Typography";
 
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper = (props) => {
+type Props = {
+  children: ReactNode;
+}
+const Wrapper: FC<Props> = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -25,28 +28,28 @@ const Wrapper = (props) => {
           flexDirection: "column",
         }}
       >
-        {props.children}
+        {children}
       </div>
     </animated.div>
   );
 }
 
-const Profile = () => {
+const Profile: FC = () => {
   return (
     <Wrapper>
       <Card
         style={{backgroundColor: "transparent", borderRadius: "2rem" }}
       >
         <CardContent>
-          <center>
+          <div style={{ textAlign: 'center' }}>
             <Typography variant={"h6"}>About Me</Typography>
             <Avatar
               style={{ width: "6vw", height: "100%"}}
               src="/contents/icon_account_resize.jpg"
             />
             <Typography variant={"h6"}>Linnefromice</Typography>
-            <Typography>Hello, I'm a Web Developer from Japan.</Typography>
-          </center>
+            <Typography>Hello, I&#39;m a Web Developer from Japan.</Typography>
+          </div>
           <Typography>Work</Typography>
           <div style={{ padding: 1 }}>
             <Chip style={{ margin: 0.5 }} label="Java" color="primary" variant="outlined"/>

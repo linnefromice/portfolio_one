@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
@@ -9,7 +9,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub } from 'react-icons/fa';
 import InfoWrapper from '../common/info_wrapper';
 
-const InfoMarvelApp = () => {
+const InfoMarvelApp: FC = () => {
   return (
     <InfoWrapper>
       <Card
@@ -25,7 +25,7 @@ const InfoMarvelApp = () => {
             marvel_app
           </Typography>
           <Typography color="textSecondary">
-            <span>We can get marvel's movies information, using Marvel Developer API.<br/></span>
+            <span>We can get marvel&#39;s movies information, using Marvel Developer API.<br/></span>
             <span>Architecture: Using bloc (& provider)<br/></span>
           </Typography>
           <Divider/>

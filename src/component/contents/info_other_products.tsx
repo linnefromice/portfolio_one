@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
@@ -8,7 +8,10 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub } from 'react-icons/fa';
 import { animated, useSpring } from 'react-spring';
 
-const Wrapper = (props) => {
+type Props = {
+  children: ReactNode;
+}
+const Wrapper: FC<Props> = ({ children }) => {
   const animatedStyle = useSpring({
     from: { opacity: "0" },
     to: { opacity: "1" },
@@ -25,13 +28,13 @@ const Wrapper = (props) => {
           alignItems: "center",
         }}
       >
-        {props.children}
+        {children}
       </div>
     </animated.div>
   );
 }
 
-const VuetifyNewsAppCard = () => {
+const VuetifyNewsAppCard: FC = () => {
   return (
     <Card
       style={{
@@ -96,7 +99,7 @@ const VuetifyNewsAppCard = () => {
   );
 }
 
-const SlideVueCard = () => {
+const SlideVueCard: FC = () => {
   return (
     <Card
       style={{
@@ -161,7 +164,7 @@ const SlideVueCard = () => {
   );
 }
 
-const InfoOtherProducts = () => {
+const InfoOtherProducts: FC = () => {
   return (
     <Wrapper>
       <VuetifyNewsAppCard/>

@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { FC, ReactNode } from 'react';
 // import './device.scss';
 
-const Device = props => {
+type Props = {
+  children: ReactNode;
+}
+const Device: FC<Props> = ({ children }) => {
   return (
     <div className="device">
       <LeftButton/>
-        <Screen>
-          {props.children}
-        </Screen>
+      <Screen>
+        {children}
+      </Screen>
       <RightButton/>
     </div>
   )
 }
 
-const Screen = props => (
+const Screen: FC<Props> = ({ children }) => (
   <div className="screen">
     <div
       className="screen_content back_stream_top"
@@ -29,12 +32,12 @@ const Screen = props => (
       ></div>
     </div>
     <div className="screen_content">
-      {props.children}
+      {children}
     </div>
   </div>
 )
 
-const LeftButton = () => (
+const LeftButton: FC = () => (
   <div
     className="left_button"
     style={{
@@ -43,7 +46,7 @@ const LeftButton = () => (
   ></div>
 );
 
-const RightButton = () => (
+const RightButton: FC = () => (
   <div
     className="right_button"
     style={{

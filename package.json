@@ -32,7 +32,8 @@
     "start": "echo \"Error: no start specified (Scheduled to be implemented by @web/dev-server)\" && exit 1",
     "build": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "lint": "eslint --cache --fix ."
   },
   "eslintConfig": {
     "extends": "react-app"
