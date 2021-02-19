@@ -21,13 +21,13 @@ const Screen: FC<Props> = ({ children }) => (
     <div
       className="screen_content back_stream_top"
       style={{
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/contents/stream_top.svg'})` 
+        backgroundImage: "url('./contents/stream_top.svg')"
       }}
     >
       <div
         className="screen_content back_stream_bottom"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL + '/contents/stream_bottom.svg'})` 
+          backgroundImage: "url('./contents/stream_bottom.svg'})"
         }}
       ></div>
     </div>
@@ -41,7 +41,7 @@ const LeftButton: FC = () => (
   <div
     className="left_button"
     style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/contents/button_left.svg'})` 
+      backgroundImage: "url('./contents/button_left.svg')"
     }}
   ></div>
 );
@@ -50,7 +50,7 @@ const RightButton: FC = () => (
   <div
     className="right_button"
     style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/contents/button_right.svg'})` 
+      backgroundImage: "url('./contents/button_right.svg')"
     }}
   ></div>
 );
