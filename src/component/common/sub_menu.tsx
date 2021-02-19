@@ -28,9 +28,7 @@ const SubMenu: FC<Props> = ({icon, name, onClick}) => {
         <div className="subMenuIcon">
           {icon}
         </div>
-        <div className="subMenuName">
-          <center>{name}</center>
-        </div>
+        <div className="subMenuName">{name}</div>
       </div>
     </button>
   )
@@ -48,9 +46,7 @@ const FocusedSubMenu: FC<Props> = ({icon, name, onClick}) => {
       <div className="subMenuIcon">
         {icon}
       </div>
-      <div className="subMenuName">
-        <center>{name}</center>
-      </div>
+      <div className="subMenuName">{name}</div>
     </animated.div>
   )
 }

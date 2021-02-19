@@ -28,9 +28,7 @@ const MainMenu: FC<Props> = ({icon, name, onClick}) => {
         <div className="mainMenuIcon">
           {icon}
         </div>
-        <div className="mainMenuName">
-          <center>{name}</center>
-        </div>
+        <div className="mainMenuName">{name}</div>
       </div>
     </button>
   )
@@ -48,12 +46,9 @@ const FocusedMainMenu: FC<Props> = ({icon, name, onClick}) => {
       <div className="mainMenuIcon">
         {icon}
       </div>
-      <div className="mainMenuName">
-        <center >{name}</center>
-      </div>
+      <div className="mainMenuName">{name}</div>
     </animated.div>
   )
 }
-
 
 export { MainMenu, FocusedMainMenu };
