@@ -8,25 +8,34 @@ My first portfolio
 
 ### Library / Frameworks
 
-- [react](https://reactjs.org/) ... Product base
-- [react-spring](https://www.react-spring.io/) ... animation (background / navigation)
-- [react-icons](https://react-icons.github.io/react-icons/) ... icons
-- [material-ui](https://material-ui.com/) ... contents parts
-- [Firebase](https://firebase.google.com/) ... hosting
+- Base
+  - [react](https://reactjs.org/) ... product base
+  - [TypeScript](https://github.com/microsoft/TypeScript) ... support javascript
+  - [Sass](https://sass-lang.com/) ... support css
+  - [eslint](https://github.com/eslint/eslint) ... linter
+  - [prettier](https://github.com/prettier/prettier) ... formatter
+  - [esbuild](https://github.com/evanw/esbuild) ... build tool
+  - [Firebase](https://firebase.google.com/) ... hosting
+- Expansion
+  - [react-spring](https://www.react-spring.io/) ... animation (background / navigation)
+  - [react-icons](https://react-icons.github.io/react-icons/) ... icons
+  - [material-ui](https://material-ui.com/) ... contents parts
 
 ## Commands
 
 ### Setup
 
 ```
-npm i
-npm start
+yarn install
+yarn build
+yarn serve
 ```
 
 ### Build & Deploy
 
 ```
-npm run build
+yarn build
+firebase login --reauth --no-localhost
 firebase deploy
 ```
 
