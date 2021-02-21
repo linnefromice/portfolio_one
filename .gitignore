@@ -9,8 +9,8 @@
 /coverage
 
 # production
-/public/index.js
-/public/index.css
+/public/out.js
+/public/out.css
 
 # misc
 .DS_Store
@@ -25,3 +25,4 @@ yarn-error.log*
 
 # original
 .eslintcache
+.firebase
