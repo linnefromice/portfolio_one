@@ -9,8 +9,8 @@
 /coverage
 
 # production
-/public/index.js
-/public/index.css
+/public/scripts.js
+/public/styles.css
 
 # misc
 .DS_Store
