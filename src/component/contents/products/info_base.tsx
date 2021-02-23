@@ -1,6 +1,13 @@
 import React, { FC, ReactNode } from "react";
 import InfoWrapper from "../../common/info_wrapper";
-import { Card, CardContent, Divider } from "@material-ui/core";
+import { Card, CardContent, Divider, styled } from "@material-ui/core";
+
+const StyledCard = styled(Card)({
+  display: "flex",
+  flexDirection: "row",
+  backgroundColor: "transparent",
+  borderRadius: "2rem"
+});
 
 type Props = {
   sentences: ReactNode,
@@ -11,14 +18,7 @@ type Props = {
 const InfoBase: FC<Props> = ({ sentences, technologies, links, images }) => {
   return (
     <InfoWrapper>
-      <Card
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          backgroundColor: "transparent",
-          borderRadius: "2rem"
-        }}
-      >
+      <StyledCard>
         <CardContent>
           {sentences}
           <Divider style={{ margin: 5 }}/>
@@ -27,7 +27,7 @@ const InfoBase: FC<Props> = ({ sentences, technologies, links, images }) => {
           {links}
         </CardContent>
         {images}
-      </Card>
+      </StyledCard>
     </InfoWrapper>
   );
 }
