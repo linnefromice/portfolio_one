@@ -5,9 +5,10 @@ import { Card, CardContent, Divider } from "@material-ui/core";
 type Props = {
   sentences: ReactNode,
   technologies: ReactNode,
-  links: ReactNode
+  links: ReactNode,
+  images: ReactNode
 }
-const InfoBase: FC<Props> = ({ sentences, technologies, links }) => {
+const InfoBase: FC<Props> = ({ sentences, technologies, links, images }) => {
   return (
     <InfoWrapper>
       <Card
@@ -20,11 +21,12 @@ const InfoBase: FC<Props> = ({ sentences, technologies, links }) => {
       >
         <CardContent>
           {sentences}
-          <Divider/>
+          <Divider style={{ margin: 5 }}/>
           {technologies}
-          <Divider/>
+          <Divider style={{ margin: 5 }}/>
           {links}
         </CardContent>
+        {images}
       </Card>
     </InfoWrapper>
   );
