@@ -116,38 +116,38 @@ const main_links: MainMenuType = {
   name: "Links",
   subMenuList: linkMenuList
 };
-const mainMenuList: MainMenuListType = {
-  "key_main_account_information": main_account_information,
-  "key_main_product": main_product,
-  "key_main_links": main_links
-};
+const mainMenuList: MainMenuType[] = [
+  main_account_information,
+  main_product,
+  main_links
+];
 
 type MainMenuListProps = {
-  focusedKey: string,
-  setFocusedKey: React.Dispatch<React.SetStateAction<string>>,
-  menuList: MainMenuListType
+  focusedKey: number,
+  setFocusedKey: React.Dispatch<React.SetStateAction<number>>,
+  menuList: MainMenuType[]
 }
 const MainMenuList: FC<MainMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
-        Object.keys(menuList).map((value, index) => {
-          if (value === focusedKey) {
+        menuList.map((value, index) => {
+          if (index === focusedKey) {
             return (
               <FocusedMainMenu
-                key={`${value}.${index}`}
-                icon={menuList[value].icon}
-                name={menuList[value].name}
-                onClick={() => setFocusedKey(value)}
+                key={`main_menu.${index}`}
+                icon={value.icon}
+                name={value.name}
+                onClick={() => setFocusedKey(index)}
               />
             );
           } else {
             return (
               <MainMenu
-                key={`${value}.${index}`}
-                icon={menuList[value].icon}
-                name={menuList[value].name}
-                onClick={() => setFocusedKey(value)}
+                key={`main_menu.${index}`}
+                icon={value.icon}
+                name={value.name}
+                onClick={() => setFocusedKey(index)}
               />
             );
           }
@@ -214,7 +214,7 @@ const SubMenuList: FC<SubMenuListProps> = ({focusedKey, setFocusedKey, menuList}
 }
 
 const Content: FC = () => {
-  const [focusedMainMenuKey, setFocusedMainMenuKey] = useState("key_main_account_information");
+  const [focusedMainMenuKey, setFocusedMainMenuKey] = useState(0);
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState("key_sub_profile");
 
   return (
