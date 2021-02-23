@@ -9,10 +9,10 @@ import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
 import Profile from './contents/profile';
 import WorkExperience from './contents/work_experience';
 import Hobby from './contents/hobby';
-import InfoStudyRecordApp from './contents/info_study_record_app';
-import InfoFFQuizApp from './contents/info_ff_quiz_app';
-import InfoMarvelApp from './contents/info_marvel_app';
-import InfoOtherProducts from './contents/info_other_products';
+import InfoStudyRecordApp from './contents/products/info_study_record_app';
+import InfoFFQuizApp from './contents/products/info_ff_quiz_app';
+import InfoMarvelApp from './contents/products/info_marvel_app';
+import InfoOtherProducts from './contents/products/info_other_products';
 // import './content.scss';
 
 type SubMenuType = {

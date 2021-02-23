@@ -7,7 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import Chip from '@material-ui/core/Chip';
 import IconButton from '@material-ui/core/IconButton';
 import { FaGithub, FaLink, FaWikipediaW } from 'react-icons/fa';
-import InfoWrapper from '../common/info_wrapper';
+import InfoWrapper from '../../common/info_wrapper';
 
 const InfoFFQuizApp: FC = () => {
   return (
