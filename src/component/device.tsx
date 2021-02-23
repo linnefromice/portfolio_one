@@ -25,7 +25,7 @@ const Screen: FC<Props> = ({ children }) => (
       <div
         className="screen_content back_stream_bottom"
         style={{ backgroundImage: "url('./contents/stream_bottom.svg'})" }}
-      ></div>
+      />
     </div>
     <div className="screen_content">
       {children}

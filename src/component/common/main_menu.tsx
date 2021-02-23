@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { config } from 'react-spring/renderprops';
+import { styled } from "@material-ui/core";
 // import './main_menu.scss';
 
 const focusedMenuAnimationStyle = {
@@ -27,21 +28,24 @@ const Contents: FC<ContentsProps> = ({ icon, name }) => {
   )
 }
 
+const StyledButton = styled('button')({
+  opacity: "0.5",
+  color: "silver",
+});
 type Props = ContentsProps & {
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 const MainMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
-    <button
+    <StyledButton
       onClick={onClick}
       className="mainMenu"
-      style={{ opacity: "0.5", color: "silver" }}
     >
       <Contents
         icon={icon}
         name={name}
       />
-    </button>
+    </StyledButton>
   )
 }
 
