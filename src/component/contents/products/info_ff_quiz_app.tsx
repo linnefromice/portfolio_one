@@ -6,7 +6,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FaGithub, FaLink, FaWikipediaW } from 'react-icons/fa';
 import InfoBase from './info_base';
 
-const Setences: FC = () => {
+const Sentences: FC = () => {
   return (
     <>
       <Typography variant="h6">
@@ -24,20 +24,20 @@ const Setences: FC = () => {
 
 const Technologies: FC = () => {
   return (
-      <>
-        <Chip
-          style={{ margin: 1 }}
-          label="Dart"
-          color="primary"
-          variant="outlined"
-        />
-        <Chip
-          style={{ margin: 1 }}
-          label="Flutter"
-          color="primary"
-          variant="outlined"
-        />
-      </>
+    <>
+      <Chip
+        style={{ margin: 1 }}
+        label="Dart"
+        color="primary"
+        variant="outlined"
+      />
+      <Chip
+        style={{ margin: 1 }}
+        label="Flutter"
+        color="primary"
+        variant="outlined"
+      />
+    </>
   );
 }
 
@@ -94,7 +94,7 @@ const Images: FC = () => {
 const InfoFFQuizApp: FC = () => {
   return (
     <InfoBase
-      sentences={<Setences/>}
+      sentences={<Sentences/>}
       technologies={<Technologies/>}
       links={<Links/>}
       images={<Images/>}
