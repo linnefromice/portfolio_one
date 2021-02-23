@@ -218,13 +218,13 @@ const Content: FC = () => {
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState("key_sub_profile");
 
   return (
-    <div>
+    <>
       <MainMenuList focusedKey={focusedMainMenuKey} setFocusedKey={setFocusedMainMenuKey} menuList={mainMenuList} />
       <SubMenuList focusedKey={focusedSubMenuKey} setFocusedKey={setFocusedSubMenuKey} menuList={mainMenuList[focusedMainMenuKey].subMenuList} />
       <div className="wrapperContent">
         {subMenuList[focusedSubMenuKey].content}
       </div>
-    </div>
+    </>
   )
 }
 

@@ -37,14 +37,14 @@ const LeftButton: FC = () => (
   <div
     className="left_button"
     style={{ backgroundImage: "url('./contents/button_left.svg')" }}
-  ></div>
+  />
 );
 
 const RightButton: FC = () => (
   <div
     className="right_button"
     style={{ backgroundImage: "url('./contents/button_right.svg')" }}
-  ></div>
+  />
 );
 
 
