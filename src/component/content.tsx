@@ -123,22 +123,22 @@ const mainMenuList: MainMenuType[] = [
 ];
 
 type MainMenuListProps = {
-  focusedKey: number,
-  setFocusedKey: React.Dispatch<React.SetStateAction<number>>,
+  focusedIndex: number,
+  setFocusedIndex: React.Dispatch<React.SetStateAction<number>>,
   menuList: MainMenuType[]
 }
-const MainMenuList: FC<MainMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
+const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, setFocusedIndex, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
         menuList.map((value, index) => {
-          if (index === focusedKey) {
+          if (index === focusedIndex) {
             return (
               <FocusedMainMenu
                 key={`main_menu.${index}`}
                 icon={value.icon}
                 name={value.name}
-                onClick={() => setFocusedKey(index)}
+                onClick={() => setFocusedIndex(index)}
               />
             );
           } else {
@@ -147,7 +147,7 @@ const MainMenuList: FC<MainMenuListProps> = ({focusedKey, setFocusedKey, menuLis
                 key={`main_menu.${index}`}
                 icon={value.icon}
                 name={value.name}
-                onClick={() => setFocusedKey(index)}
+                onClick={() => setFocusedIndex(index)}
               />
             );
           }
@@ -214,13 +214,13 @@ const SubMenuList: FC<SubMenuListProps> = ({focusedKey, setFocusedKey, menuList}
 }
 
 const Content: FC = () => {
-  const [focusedMainMenuKey, setFocusedMainMenuKey] = useState(0);
+  const [focusedMainMenuIndex, setFocusedMainMenuIndex] = useState(0);
   const [focusedSubMenuKey, setFocusedSubMenuKey] = useState("key_sub_profile");
 
   return (
     <>
-      <MainMenuList focusedKey={focusedMainMenuKey} setFocusedKey={setFocusedMainMenuKey} menuList={mainMenuList} />
-      <SubMenuList focusedKey={focusedSubMenuKey} setFocusedKey={setFocusedSubMenuKey} menuList={mainMenuList[focusedMainMenuKey].subMenuList} />
+      <MainMenuList focusedIndex={focusedMainMenuIndex} setFocusedIndex={setFocusedMainMenuIndex} menuList={mainMenuList} />
+      <SubMenuList focusedKey={focusedSubMenuKey} setFocusedKey={setFocusedSubMenuKey} menuList={mainMenuList[focusedMainMenuIndex].subMenuList} />
       <div className="wrapperContent">
         {subMenuList[focusedSubMenuKey].content}
       </div>
