@@ -60,14 +60,12 @@ const Technologies: FC = () => {
 
 const Links: FC = () => {
   return (
-    <>
-      <IconButton
-        style={{ margin: 1 }}
-        href="https://github.com/linnefromice/marvel_flutter"
-      >
-        <FaGithub/>
-      </IconButton>
-    </>
+    <IconButton
+      style={{ margin: 1 }}
+      href="https://github.com/linnefromice/marvel_flutter"
+    >
+      <FaGithub/>
+    </IconButton>
   );
 }
 
