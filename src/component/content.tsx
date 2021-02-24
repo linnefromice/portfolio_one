@@ -1,4 +1,4 @@
-import React, { FC, useLayoutEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
@@ -20,9 +20,6 @@ type SubMenuType = {
   name: string,
   content: JSX.Element,
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
-}
-type SubMenuListType = {
-  [key: string] : SubMenuType;
 }
 type MainMenuType = {
   icon: JSX.Element,
@@ -86,29 +83,6 @@ const link_github: SubMenuType = {
 const linkMenuList: SubMenuType[] = [
   link_github,
 ];
-const subMenuList: SubMenuType[] = [
-  sub_profile,
-  sub_work_experience,
-  sub_hobby,
-  study_record_app,
-  ff_quiz_app,
-  marvel_app,
-  other_products,
-  link_github,
-];
-
-/*
-const subMenuList: SubMenuListType = {
-  "key_sub_profile": sub_profile,
-  "key_sub_work_experience": sub_work_experience,
-  "key_sub_hobby": sub_hobby,
-  "key_study_record_app": study_record_app,
-  "key_ff_quiz_app": ff_quiz_app,
-  "key_marvel_app": marvel_app,
-  "key_other_products": other_products,
-  "key_link_github": link_github,
-}
-*/
 
 const main_account_information: MainMenuType = {
   icon: <MdAccountCircle size="100%"/>,
