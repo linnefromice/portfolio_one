@@ -29,10 +29,6 @@ type MainMenuType = {
   name: string,
   subMenuList: SubMenuListType
 }
-type MainMenuListType = {
-  [key: string] : MainMenuType;
-}
-
 const sub_profile: SubMenuType = {
   icon: <RiProfileLine size="100%"/>,
   name: "Profile",
@@ -159,7 +155,7 @@ const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, setFocusedIndex, men
 type SubMenuListProps = {
   focusedKey: string,
   setFocusedKey: React.Dispatch<React.SetStateAction<string>>,
-  menuList: any
+  menuList: SubMenuListType
 }
 const SubMenuList: FC<SubMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
   return (

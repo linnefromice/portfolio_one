@@ -33,7 +33,7 @@ const StyledButton = styled('button')({
   color: "silver",
 });
 type Props = ContentsProps & {
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
 const SubMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
