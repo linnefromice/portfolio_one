@@ -107,10 +107,10 @@ const mainMenuList: MainMenuType[] = [
 
 type MainMenuListProps = {
   focusedIndex: number,
-  setFocusedIndex: React.Dispatch<React.SetStateAction<number>>,
+  selectMenu: (idx: number) => void,
   menuList: MainMenuType[]
 }
-const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, setFocusedIndex, menuList}) => {
+const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, selectMenu, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
@@ -121,7 +121,7 @@ const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, setFocusedIndex, men
                 key={`main_menu.${index}`}
                 icon={value.icon}
                 name={value.name}
-                onClick={() => setFocusedIndex(index)}
+                onClick={() => selectMenu(index)}
               />
             );
           } else {
@@ -130,7 +130,7 @@ const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, setFocusedIndex, men
                 key={`main_menu.${index}`}
                 icon={value.icon}
                 name={value.name}
-                onClick={() => setFocusedIndex(index)}
+                onClick={() => selectMenu(index)}
               />
             );
           }
@@ -141,10 +141,10 @@ const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, setFocusedIndex, men
 }
 type SubMenuListProps = {
   focusedIndex: number,
-  setFocusedIndex: React.Dispatch<React.SetStateAction<number>>,
+  selectMenu: (idx: number) => void,
   menuList: SubMenuType[]
 }
-const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, setFocusedIndex, menuList}) => {
+const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, selectMenu, menuList}) => {
   return (
     <div className="wrapperSubMenu">
       {
@@ -156,7 +156,7 @@ const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, setFocusedIndex, menuL
                   key={`sub_menu.${index}`}
                   icon={value.icon}
                   name={value.name}
-                  onClick={() => setFocusedIndex(index)}
+                  onClick={() => selectMenu(index)}
                 />
               ); 
             } else {
@@ -176,7 +176,7 @@ const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, setFocusedIndex, menuL
                   key={`sub_menu.${index}`}
                   icon={value.icon}
                   name={value.name}
-                  onClick={() => setFocusedIndex(index)}
+                  onClick={() => selectMenu(index)}
                 />
               ); 
             } else {
@@ -196,14 +196,33 @@ const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, setFocusedIndex, menuL
   );
 }
 
-const Content: FC = () => {
+const useSelectMenu = () => {
   const [focusedMainMenuIndex, setFocusedMainMenuIndex] = useState(0);
   const [focusedSubMenuIndex, setFocusedSubMenuIndex] = useState(0);
 
+  const selectSubMenu = (idx: number) => {
+    setFocusedSubMenuIndex(idx);
+  }
+  const selectMainMenu = (idx: number) => {
+    setFocusedMainMenuIndex(idx);
+    setFocusedSubMenuIndex(0);
+  }
+
+  return {
+    focusedMainMenuIndex,
+    focusedSubMenuIndex,
+    selectSubMenu,
+    selectMainMenu,
+  };
+}
+
+const Content: FC = () => {
+  const { focusedMainMenuIndex, focusedSubMenuIndex, selectSubMenu, selectMainMenu } = useSelectMenu();
+
   return (
     <>
-      <MainMenuList focusedIndex={focusedMainMenuIndex} setFocusedIndex={setFocusedMainMenuIndex} menuList={mainMenuList} />
-      <SubMenuList focusedIndex={focusedSubMenuIndex} setFocusedIndex={setFocusedSubMenuIndex} menuList={mainMenuList[focusedMainMenuIndex].subMenuList} />
+      <MainMenuList focusedIndex={focusedMainMenuIndex} selectMenu={selectMainMenu} menuList={mainMenuList} />
+      <SubMenuList focusedIndex={focusedSubMenuIndex} selectMenu={selectSubMenu} menuList={mainMenuList[focusedMainMenuIndex].subMenuList} />
       <div className="wrapperContent">
         {mainMenuList[focusedMainMenuIndex].subMenuList[focusedSubMenuIndex].content}
       </div>
