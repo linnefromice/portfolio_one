@@ -9,10 +9,10 @@ import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
 import Profile from './contents/profile';
 import WorkExperience from './contents/work_experience';
 import Hobby from './contents/hobby';
-import InfoStudyRecordApp from './contents/info_study_record_app';
-import InfoFFQuizApp from './contents/info_ff_quiz_app';
-import InfoMarvelApp from './contents/info_marvel_app';
-import InfoOtherProducts from './contents/info_other_products';
+import InfoStudyRecordApp from './contents/products/info_study_record_app';
+import InfoFFQuizApp from './contents/products/info_ff_quiz_app';
+import InfoMarvelApp from './contents/products/info_marvel_app';
+import InfoOtherProducts from './contents/products/info_other_products';
 // import './content.scss';
 
 type SubMenuType = {
@@ -21,18 +21,11 @@ type SubMenuType = {
   content: JSX.Element,
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
-type SubMenuListType = {
-  [key: string] : SubMenuType;
-}
 type MainMenuType = {
   icon: JSX.Element,
   name: string,
-  subMenuList: SubMenuListType
+  subMenuList: SubMenuType[]
 }
-type MainMenuListType = {
-  [key: string] : MainMenuType;
-}
-
 const sub_profile: SubMenuType = {
   icon: <RiProfileLine size="100%"/>,
   name: "Profile",
@@ -48,11 +41,11 @@ const sub_hobby: SubMenuType = {
   name: "Hobby",
   content: <Hobby/>,
 };
-const accountMenuList: SubMenuListType = {
-  "key_sub_profile": sub_profile,
-  "key_sub_work_experience": sub_work_experience,
-  "key_sub_hobby": sub_hobby,
-};
+const accountMenuList: SubMenuType[] = [
+  sub_profile,
+  sub_work_experience,
+  sub_hobby,
+];
 
 const study_record_app: SubMenuType = {
   icon: <RiFlutterLine size="75%"/>,
@@ -74,12 +67,12 @@ const other_products: SubMenuType = {
   name: "Others",
   content: <InfoOtherProducts/>
 };
-const productMenuList: SubMenuListType = {
-  "key_study_record_app": study_record_app,
-  "key_ff_quiz_app": ff_quiz_app,
-  "key_marvel_app": marvel_app,
-  "key_other_products": other_products,
-};
+const productMenuList: SubMenuType[] = [
+  study_record_app,
+  ff_quiz_app,
+  marvel_app,
+  other_products,
+];
 
 const link_github: SubMenuType = {
   icon: <FaGithub size="100%"/>,
@@ -87,19 +80,9 @@ const link_github: SubMenuType = {
   content: <div></div>,
   onClick: () => window.open('https://github.com/linnefromice', '_blank')
 }
-const linkMenuList: SubMenuListType = {
-  "key_link_github": link_github,
-};
-const subMenuList: SubMenuListType = {
-  "key_sub_profile": sub_profile,
-  "key_sub_work_experience": sub_work_experience,
-  "key_sub_hobby": sub_hobby,
-  "key_study_record_app": study_record_app,
-  "key_ff_quiz_app": ff_quiz_app,
-  "key_marvel_app": marvel_app,
-  "key_other_products": other_products,
-  "key_link_github": link_github,
-}
+const linkMenuList: SubMenuType[] = [
+  link_github,
+];
 
 const main_account_information: MainMenuType = {
   icon: <MdAccountCircle size="100%"/>,
@@ -116,38 +99,38 @@ const main_links: MainMenuType = {
   name: "Links",
   subMenuList: linkMenuList
 };
-const mainMenuList: MainMenuListType = {
-  "key_main_account_information": main_account_information,
-  "key_main_product": main_product,
-  "key_main_links": main_links
-};
+const mainMenuList: MainMenuType[] = [
+  main_account_information,
+  main_product,
+  main_links
+];
 
 type MainMenuListProps = {
-  focusedKey: string,
-  setFocusedKey: React.Dispatch<React.SetStateAction<string>>,
-  menuList: MainMenuListType
+  focusedIndex: number,
+  selectMenu: (idx: number) => void,
+  menuList: MainMenuType[]
 }
-const MainMenuList: FC<MainMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
+const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, selectMenu, menuList}) => {
   return (
     <div className="wrapperMainMenu">
       {
-        Object.keys(menuList).map((value, index) => {
-          if (value === focusedKey) {
+        menuList.map((value, index) => {
+          if (index === focusedIndex) {
             return (
               <FocusedMainMenu
-                key={`${value}.${index}`}
-                icon={menuList[value].icon}
-                name={menuList[value].name}
-                onClick={() => setFocusedKey(value)}
+                key={`main_menu.${index}`}
+                icon={value.icon}
+                name={value.name}
+                onClick={() => selectMenu(index)}
               />
             );
           } else {
             return (
               <MainMenu
-                key={`${value}.${index}`}
-                icon={menuList[value].icon}
-                name={menuList[value].name}
-                onClick={() => setFocusedKey(value)}
+                key={`main_menu.${index}`}
+                icon={value.icon}
+                name={value.name}
+                onClick={() => selectMenu(index)}
               />
             );
           }
@@ -157,52 +140,52 @@ const MainMenuList: FC<MainMenuListProps> = ({focusedKey, setFocusedKey, menuLis
   );
 }
 type SubMenuListProps = {
-  focusedKey: string,
-  setFocusedKey: React.Dispatch<React.SetStateAction<string>>,
-  menuList: any
+  focusedIndex: number,
+  selectMenu: (idx: number) => void,
+  menuList: SubMenuType[]
 }
-const SubMenuList: FC<SubMenuListProps> = ({focusedKey, setFocusedKey, menuList}) => {
+const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, selectMenu, menuList}) => {
   return (
     <div className="wrapperSubMenu">
       {
-        Object.keys(menuList).map((value, index) => {
-          if (value === focusedKey) {
-            if (menuList[value].onClick === undefined) {
+        menuList.map((value, index) => {
+          if (index === focusedIndex) {
+            if (value.onClick === undefined) {
               return (
                 <FocusedSubMenu
-                  key={`${value}.${index}`}
-                  icon={menuList[value].icon}
-                  name={menuList[value].name}
-                  onClick={() => setFocusedKey(value)}
+                  key={`sub_menu.${index}`}
+                  icon={value.icon}
+                  name={value.name}
+                  onClick={() => selectMenu(index)}
                 />
               ); 
             } else {
               return (
                 <FocusedSubMenu
-                  key={`${value}.${index}`}
-                  icon={menuList[value].icon}
-                  name={menuList[value].name}
-                  onClick={menuList[value].onClick}
+                  key={`sub_menu.${index}`}
+                  icon={value.icon}
+                  name={value.name}
+                  onClick={value.onClick}
                 />
               ); 
             }
           } else {
-            if (menuList[value].onClick === undefined) {
+            if (value.onClick === undefined) {
               return (
                 <SubMenu
-                  key={`${value}.${index}`}
-                  icon={menuList[value].icon}
-                  name={menuList[value].name}
-                  onClick={() => setFocusedKey(value)}
+                  key={`sub_menu.${index}`}
+                  icon={value.icon}
+                  name={value.name}
+                  onClick={() => selectMenu(index)}
                 />
               ); 
             } else {
               return (
                 <SubMenu
-                  key={`${value}.${index}`}
-                  icon={menuList[value].icon}
-                  name={menuList[value].name}
-                  onClick={menuList[value].onClick}
+                  key={`sub_menu.${index}`}
+                  icon={value.icon}
+                  name={value.name}
+                  onClick={value.onClick}
                 />
               ); 
             }
@@ -213,18 +196,37 @@ const SubMenuList: FC<SubMenuListProps> = ({focusedKey, setFocusedKey, menuList}
   );
 }
 
+const useSelectMenu = () => {
+  const [focusedMainMenuIndex, setFocusedMainMenuIndex] = useState(0);
+  const [focusedSubMenuIndex, setFocusedSubMenuIndex] = useState(0);
+
+  const selectSubMenu = (idx: number) => {
+    setFocusedSubMenuIndex(idx);
+  }
+  const selectMainMenu = (idx: number) => {
+    setFocusedMainMenuIndex(idx);
+    setFocusedSubMenuIndex(0);
+  }
+
+  return {
+    focusedMainMenuIndex,
+    focusedSubMenuIndex,
+    selectSubMenu,
+    selectMainMenu,
+  };
+}
+
 const Content: FC = () => {
-  const [focusedMainMenuKey, setFocusedMainMenuKey] = useState("key_main_account_information");
-  const [focusedSubMenuKey, setFocusedSubMenuKey] = useState("key_sub_profile");
+  const { focusedMainMenuIndex, focusedSubMenuIndex, selectSubMenu, selectMainMenu } = useSelectMenu();
 
   return (
-    <div>
-      <MainMenuList focusedKey={focusedMainMenuKey} setFocusedKey={setFocusedMainMenuKey} menuList={mainMenuList} />
-      <SubMenuList focusedKey={focusedSubMenuKey} setFocusedKey={setFocusedSubMenuKey} menuList={mainMenuList[focusedMainMenuKey].subMenuList} />
+    <>
+      <MainMenuList focusedIndex={focusedMainMenuIndex} selectMenu={selectMainMenu} menuList={mainMenuList} />
+      <SubMenuList focusedIndex={focusedSubMenuIndex} selectMenu={selectSubMenu} menuList={mainMenuList[focusedMainMenuIndex].subMenuList} />
       <div className="wrapperContent">
-        {subMenuList[focusedSubMenuKey].content}
+        {mainMenuList[focusedMainMenuIndex].subMenuList[focusedSubMenuIndex].content}
       </div>
-    </div>
+    </>
   )
 }
 

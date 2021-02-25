@@ -20,16 +20,12 @@ const Screen: FC<Props> = ({ children }) => (
   <div className="screen">
     <div
       className="screen_content back_stream_top"
-      style={{
-        backgroundImage: "url('./contents/stream_top.svg')"
-      }}
+      style={{ backgroundImage: "url('./contents/stream_top.svg')" }}
     >
       <div
         className="screen_content back_stream_bottom"
-        style={{
-          backgroundImage: "url('./contents/stream_bottom.svg'})"
-        }}
-      ></div>
+        style={{ backgroundImage: "url('./contents/stream_bottom.svg'})" }}
+      />
     </div>
     <div className="screen_content">
       {children}
@@ -40,19 +36,15 @@ const Screen: FC<Props> = ({ children }) => (
 const LeftButton: FC = () => (
   <div
     className="left_button"
-    style={{
-      backgroundImage: "url('./contents/button_left.svg')"
-    }}
-  ></div>
+    style={{ backgroundImage: "url('./contents/button_left.svg')" }}
+  />
 );
 
 const RightButton: FC = () => (
   <div
     className="right_button"
-    style={{
-      backgroundImage: "url('./contents/button_right.svg')"
-    }}
-  ></div>
+    style={{ backgroundImage: "url('./contents/button_right.svg')" }}
+  />
 );
 
 

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { animated, useSpring } from 'react-spring';
 import { config } from 'react-spring/renderprops';
+import { styled } from "@material-ui/core";
 // import './main_menu.scss';
 
 const focusedMenuAnimationStyle = {
@@ -12,23 +13,39 @@ const focusedMenuAnimationStyle = {
   config: config.gentle
 };
 
-type Props = {
+type ContentsProps = {
   icon: JSX.Element, // IconType,
   name: string,
-  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 }
-const MainMenu: FC<Props> = ({icon, name, onClick}) => {
+const Contents: FC<ContentsProps> = ({ icon, name }) => {
   return (
-    <button
-      onClick={onClick}
-      className="mainMenu"
-      style={{ opacity: "0.5", color: "silver" }}
-    >
+    <>
       <div className="mainMenuIcon">
         {icon}
       </div>
       <div className="mainMenuName">{name}</div>
-    </button>
+    </>
+  )
+}
+
+const StyledButton = styled('button')({
+  opacity: "0.5",
+  color: "silver",
+});
+type Props = ContentsProps & {
+  onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
+}
+const MainMenu: FC<Props> = ({icon, name, onClick}) => {
+  return (
+    <StyledButton
+      onClick={onClick}
+      className="mainMenu"
+    >
+      <Contents
+        icon={icon}
+        name={name}
+      />
+    </StyledButton>
   )
 }
 
@@ -41,10 +58,10 @@ const FocusedMainMenu: FC<Props> = ({icon, name, onClick}) => {
       className="mainMenu"
       style={focusedMenuStyle}
     >
-      <div className="mainMenuIcon">
-        {icon}
-      </div>
-      <div className="mainMenuName">{name}</div>
+      <Contents
+        icon={icon}
+        name={name}
+      />
     </animated.button>
   )
 }
