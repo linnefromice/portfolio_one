@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useCallback, useState } from 'react';
 import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
 import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
@@ -200,13 +200,13 @@ const useSelectMenu = () => {
   const [focusedMainMenuIndex, setFocusedMainMenuIndex] = useState(0);
   const [focusedSubMenuIndex, setFocusedSubMenuIndex] = useState(0);
 
-  const selectSubMenu = (idx: number) => {
+  const selectSubMenu = useCallback((idx: number) => {
     setFocusedSubMenuIndex(idx);
-  }
-  const selectMainMenu = (idx: number) => {
+  }, [])
+  const selectMainMenu = useCallback((idx: number) => {
     setFocusedMainMenuIndex(idx);
     setFocusedSubMenuIndex(0);
-  }
+  }, [])
 
   return {
     focusedMainMenuIndex,
