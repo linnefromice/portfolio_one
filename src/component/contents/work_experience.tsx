@@ -11,24 +11,17 @@ type Props = {
 }
 const Wrapper: FC<Props> = ({ children }) => {
   const animatedStyle = useSpring({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    flexDirection: "row",
+    opacity: "1",
     from: { opacity: "0" },
-    to: { opacity: "1" },
   });
 
   return (
-    <animated.div
-      style={animatedStyle}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          flexDirection: "row",
-        }}
-      >
-        {children}
-      </div>
+    <animated.div style={animatedStyle}>
+      {children}
     </animated.div>
   );
 }
@@ -65,6 +58,19 @@ const WorkExperience: FC = () => {
             }
           />
         </ListItem>
+        <ListItem alignItems="flex-start">
+          <ListItemText
+            primary="Alterbo, Inc."
+            secondary={
+              <React.Fragment>
+                <Typography component="span" variant="body1">2020.12 -<br/></Typography>
+                <Typography component="span" variant="body2">In-house system improvement<br/></Typography>
+                <Typography component="span" variant="body2">- JavaScript, GoogleAppScript, BigQuery, Kintone...</Typography>
+              </React.Fragment>
+            }
+          />
+        </ListItem>
+
       </List>
     </Wrapper>
   );

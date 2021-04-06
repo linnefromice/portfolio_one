@@ -23,8 +23,17 @@
 .wrapperContent {
   position: absolute;
   top: 25vh;
-  left: 20vw;
+  left: 15vw;
   margin: 1vh 1vw;
   height: 50vh;
-  width: 38vw;
+  width: 42vw;
+  overflow-y: scroll;
+  /* IE, Edge 対応 */
+  -ms-overflow-style: none;
+  /* Firefox 対応 */
+  scrollbar-width: none;
+}
+/* Chrome, Safari 対応 */
+.wrapperContent::-webkit-scrollbar {
+  display:none;
 }
