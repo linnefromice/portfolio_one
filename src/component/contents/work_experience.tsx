@@ -65,6 +65,19 @@ const WorkExperience: FC = () => {
             }
           />
         </ListItem>
+        <ListItem alignItems="flex-start">
+          <ListItemText
+            primary="Alterbo, Inc."
+            secondary={
+              <React.Fragment>
+                <Typography component="span" variant="body1">2020.12 -<br/></Typography>
+                <Typography component="span" variant="body2">In-house system improvement<br/></Typography>
+                <Typography component="span" variant="body2">- JavaScript, GoogleAppScript, BigQuery, Kintone...</Typography>
+              </React.Fragment>
+            }
+          />
+        </ListItem>
+
       </List>
     </Wrapper>
   );
