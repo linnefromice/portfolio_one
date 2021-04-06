@@ -11,24 +11,17 @@ type Props = {
 }
 const Wrapper: FC<Props> = ({ children }) => {
   const animatedStyle = useSpring({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    flexDirection: "row",
+    opacity: "1",
     from: { opacity: "0" },
-    to: { opacity: "1" },
   });
 
   return (
-    <animated.div
-      style={animatedStyle}
-    >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-start",
-          flexDirection: "row",
-        }}
-      >
-        {children}
-      </div>
+    <animated.div style={animatedStyle}>
+      {children}
     </animated.div>
   );
 }

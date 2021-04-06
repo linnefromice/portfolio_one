@@ -23,9 +23,7 @@ const Wrapper: FC<Props> = ({ children }) => {
   });
 
   return (
-    <animated.div
-      style={animatedStyle}
-    >
+    <animated.div style={animatedStyle}>
       {children}
     </animated.div>
   );
