@@ -13,23 +13,20 @@ type Props = {
 }
 const Wrapper: FC<Props> = ({ children }) => {
   const animatedStyle = useSpring({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    height: "100%",
+    opacity: "1",
     from: { opacity: "0" },
-    to: { opacity: "1" },
   });
 
   return (
     <animated.div
       style={animatedStyle}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {children}
-      </div>
+      {children}
     </animated.div>
   );
 }
@@ -41,7 +38,8 @@ const VuetifyNewsAppCard: FC = () => {
         display: "flex",
         flexDirection: "row",
         backgroundColor: "transparent",
-        borderRadius: "2rem"
+        borderRadius: "2rem",
+        minHeight: "100%"
       }}
     >
       <CardContent>
@@ -106,7 +104,8 @@ const SlideVueCard: FC = () => {
         display: "flex",
         flexDirection: "row",
         backgroundColor: "transparent",
-        borderRadius: "2rem"
+        borderRadius: "2rem",
+        minHeight: "100%"
       }}
     >
       <CardContent>
