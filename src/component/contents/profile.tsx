@@ -38,7 +38,10 @@ const Profile: FC = () => {
   return (
     <Wrapper>
       <Card
-        style={{backgroundColor: "transparent", borderRadius: "2rem" }}
+        style={{
+          backgroundColor: "transparent",
+          borderRadius: "2rem",
+        }}
       >
         <CardContent>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column" }}>
