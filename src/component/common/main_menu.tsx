@@ -6,17 +6,23 @@ import { styled } from "@material-ui/core";
 
 const focusedMenuAnimationStyle = {
   from: {
+    fontWeight: 400,
+    fontSize: "100%",
     width: "4vw",
     opacity: "0.5",
     color: "silver",
   },
   to: async (next) => {
     await next({
+      fontWeight: 800,
+      fontSize: "110%",
       width: "6vw",
       opacity: "0.75",
       color: "#64f38c",
     });
     await next({
+      fontWeight: 800,
+      fontSize: "110%",
       width: "6vw",
       opacity: "1",
       color: "#45B649",
