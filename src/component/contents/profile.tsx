@@ -49,6 +49,7 @@ const Profile: FC = () => {
             </div>
             <div style={{ width: 2 }}/>
             <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "center", flexDirection: "column" }}>
+              <Typography>SKILLS</Typography>
               <Typography variant="overline">Work</Typography>
               <div style={{ padding: 0.25 }}>
                 <div>
