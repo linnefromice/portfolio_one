@@ -12,7 +12,7 @@ const focusedMenuAnimationStyle = {
     opacity: "0.5",
     color: "silver",
   },
-  to: async (next) => {
+  to: async next => {
     await next({
       fontWeight: 800,
       fontSize: "110%",
