@@ -3,7 +3,6 @@
 @import './component/device.scss';
 @import './component/common/main_menu.scss';
 @import './component/common/sub_menu.scss';
-@import './component/common/info_wrapper.scss';
 
 body {
   margin: 0;
