@@ -53,17 +53,17 @@ const study_record_app: SubMenuType = {
   content: <InfoStudyRecordApp/>,
 };
 const ff_quiz_app: SubMenuType = {
-  icon: <RiFlutterLine size="75%"/>,
+  icon: <RiFlutterLine size="60%"/>,
   name: "ff_quiz_app",
   content: <InfoFFQuizApp/>,
 };
 const marvel_app: SubMenuType = {
-  icon: <RiFlutterLine size="75%"/>,
+  icon: <RiFlutterLine size="60%"/>,
   name: "marvel_app",
   content: <InfoMarvelApp/>,
 };
 const other_products: SubMenuType = {
-  icon: <FaCode size="75%"/>,
+  icon: <FaCode size="60%"/>,
   name: "Others",
   content: <InfoOtherProducts/>
 };
@@ -75,7 +75,7 @@ const productMenuList: SubMenuType[] = [
 ];
 
 const link_github: SubMenuType = {
-  icon: <FaGithub size="100%"/>,
+  icon: <FaGithub size="80%"/>,
   name: "Github",
   content: <div></div>,
   onClick: () => window.open('https://github.com/linnefromice', '_blank')
