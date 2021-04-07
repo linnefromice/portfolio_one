@@ -5,10 +5,22 @@ import { styled } from "@material-ui/core";
 // import './sub_menu.scss';
 
 const focusedMenuAnimationStyle = {
-  from: { opacity: "0.5", color: "silver" },
+  from: {
+    width: "6vw",
+    opacity: "0.5",
+    color: "silver",
+  },
   to: async (next) => {
-    await next({ opacity: "0.75", color: "#64f38c" });
-    await next({ opacity: "1", color: "#45B649" });
+    await next({
+      width: "8vw",
+      opacity: "0.75",
+      color: "#64f38c",
+    });
+    await next({
+      width: "8vw",
+      opacity: "1",
+      color: "#45B649",
+    });
   },
   config: config.gentle
 };
@@ -29,6 +41,7 @@ const Contents: FC<ContentsProps> = ({ icon, name }) => {
 }
 
 const StyledButton = styled('button')({
+  width: "6vw",
   opacity: "0.5",
   color: "silver",
 });
