@@ -4,17 +4,17 @@ import { animated, useSpring } from 'react-spring';
 
 const InfoWrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    opacity: "1",
     from: { opacity: "0" },
-    to: { opacity: "1" },
   });
 
   return (
-    <animated.div
-      style={animatedStyle}
-    >
-      <div className="info_wrapper">
-        {children}
-      </div>
+    <animated.div style={animatedStyle}>
+      {children}
     </animated.div>
   );
 }

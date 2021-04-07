@@ -5,10 +5,28 @@ import { styled } from "@material-ui/core";
 // import './main_menu.scss';
 
 const focusedMenuAnimationStyle = {
-  from: { opacity: "0.5", color: "silver" },
-  to: async (next) => {
-    await next({ opacity: "0.75", color: "#64f38c" });
-    await next({ opacity: "1", color: "#45B649" });
+  from: {
+    fontWeight: 400,
+    fontSize: "100%",
+    width: "4vw",
+    opacity: "0.5",
+    color: "silver",
+  },
+  to: async next => {
+    await next({
+      fontWeight: 800,
+      fontSize: "110%",
+      width: "6vw",
+      opacity: "0.75",
+      color: "#64f38c",
+    });
+    await next({
+      fontWeight: 800,
+      fontSize: "110%",
+      width: "6vw",
+      opacity: "1",
+      color: "#45B649",
+    });
   },
   config: config.gentle
 };
@@ -29,6 +47,7 @@ const Contents: FC<ContentsProps> = ({ icon, name }) => {
 }
 
 const StyledButton = styled('button')({
+  width: "4vw",
   opacity: "0.5",
   color: "silver",
 });
