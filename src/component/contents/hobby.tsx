@@ -27,7 +27,12 @@ const Wrapper: FC = ({ children }) => {
   );
 }
 
-const hobbyListOne = [
+type Hobby = {
+  icon: JSX.Element;
+  primary: string;
+  secondary: string;
+}
+const hobbyListOne: Hobby[] = [
   {
     icon: <GiSoccerBall/>,
     primary: "Soccer",
@@ -55,7 +60,7 @@ const hobbyListOne = [
   },
 
 ];
-const hobbyListTwo = [
+const hobbyListTwo: Hobby[] = [
   {
     icon: <FaGamepad/>,
     primary: "TV Game",
