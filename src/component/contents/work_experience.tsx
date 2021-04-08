@@ -67,7 +67,6 @@ const WorkExperience: FC = () => {
             }
           />
         </ListItem>
-
       </List>
     </Wrapper>
   );
