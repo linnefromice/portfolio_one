@@ -95,53 +95,41 @@ const useStyles = makeStyles({
   }
 });
 
-const Hobby: FC = () => {
+type HobbyListProps = {
+  hobbyList: Hobby[]
+}
+const HobbyList: FC<HobbyListProps> = ({ hobbyList }) => {
   const classes = useStyles();
+  return (
+    <List>
+      {hobbyList.map((value, index) => (
+        <ListItem
+          key={`hobbyList.${index}`}
+          classes={{
+            gutters: classes.listItemStyle
+          }}
+          alignItems="flex-start"
+        >
+          <ListItemAvatar>{value.icon}</ListItemAvatar>
+          <ListItemText
+            classes={{
+              primary: classes.primaryTextStyle,
+              secondary: classes.secondaryTextStyle,
+            }}
+            primary={value.primary}
+            secondary={value.secondary}
+          />
+        </ListItem>
+      ))}
+    </List>
+  )
+}
 
+const Hobby: FC = () => {
   return (
     <Wrapper>
-      <List>
-        {hobbyListOne.map((value, index) => (
-          <ListItem
-            key={`hobby.list_one.${index}`}
-            classes={{
-              gutters: classes.listItemStyle
-            }}
-            alignItems="flex-start"
-          >
-            <ListItemAvatar>{value.icon}</ListItemAvatar>
-            <ListItemText
-              classes={{
-                primary: classes.primaryTextStyle,
-                secondary: classes.secondaryTextStyle,
-              }}
-              primary={value.primary}
-              secondary={value.secondary}
-            />
-          </ListItem>
-        ))}
-      </List>
-      <List>
-        {hobbyListTwo.map((value, index) => (
-          <ListItem
-            key={`hobby.list_two.${index}`}
-            classes={{
-              gutters: classes.listItemStyle
-            }}
-            alignItems="flex-start"
-          >
-            <ListItemAvatar>{value.icon}</ListItemAvatar>
-            <ListItemText
-              classes={{
-                primary: classes.primaryTextStyle,
-                secondary: classes.secondaryTextStyle,
-              }}
-              primary={value.primary}
-              secondary={value.secondary}
-            />
-          </ListItem>
-        ))}
-      </List>
+      <HobbyList hobbyList={hobbyListOne} />
+      <HobbyList hobbyList={hobbyListTwo} />
     </Wrapper>
   );
 }
