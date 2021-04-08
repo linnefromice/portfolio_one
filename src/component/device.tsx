@@ -1,10 +1,7 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 // import './device.scss';
 
-type Props = {
-  children: ReactNode;
-}
-const Device: FC<Props> = ({ children }) => {
+const Device: FC = ({ children }) => {
   return (
     <div className="device">
       <LeftButton/>
@@ -16,7 +13,7 @@ const Device: FC<Props> = ({ children }) => {
   )
 }
 
-const Screen: FC<Props> = ({ children }) => (
+const Screen: FC = ({ children }) => (
   <div className="screen">
     <div
       className="screen_content back_stream_top"

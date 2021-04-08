@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
@@ -10,10 +10,7 @@ import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } fro
 import { animated, useSpring } from 'react-spring';
 import { makeStyles } from '@material-ui/core';
 
-type Props = {
-  children: ReactNode;
-}
-const Wrapper: FC<Props> = ({ children }) => {
+const Wrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
     display: "flex",
     justifyContent: "center",
