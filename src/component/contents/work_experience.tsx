@@ -1,9 +1,5 @@
 import React, { FC, Fragment } from 'react';
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from '@material-ui/core/ListItemText';
-import Typography from "@material-ui/core/Typography";
-
+import { List, ListItem, ListItemText, Typography } from "@material-ui/core";
 import { animated, useSpring } from 'react-spring';
 
 const Wrapper: FC = ({ children }) => {

@@ -1,8 +1,5 @@
 import React, { FC } from 'react';
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from '@material-ui/core/ListItemText';
+import { List, ListItem, ListItemAvatar, ListItemText } from "@material-ui/core"
 import { GiSoccerBall } from 'react-icons/gi';
 import { MdRadio, MdMovie, MdMusicNote } from 'react-icons/md';
 import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } from 'react-icons/fa';

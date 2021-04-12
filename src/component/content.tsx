@@ -5,7 +5,6 @@ import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
 
 import { MainMenu, FocusedMainMenu } from './common/main_menu.jsx';
 import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
-
 import Profile from './contents/profile';
 import WorkExperience from './contents/work_experience';
 import Hobby from './contents/hobby';

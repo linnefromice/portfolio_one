@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
-import InfoWrapper from "../../common/info_wrapper";
 import { Card, CardContent, Divider, styled } from "@material-ui/core";
+import InfoWrapper from "../../common/info_wrapper";
 
 const StyledCard = styled(Card)({
   display: "flex",
