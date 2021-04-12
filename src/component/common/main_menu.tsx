@@ -38,10 +38,10 @@ type ContentsProps = {
 const Contents: FC<ContentsProps> = ({ icon, name }) => {
   return (
     <>
-      <div className="mainMenuIcon">
+      <div className="mainmenu-icon">
         {icon}
       </div>
-      <div className="mainMenuName">{name}</div>
+      <div className="mainmenu-name">{name}</div>
     </>
   )
 }
@@ -58,7 +58,7 @@ const MainMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
     <StyledButton
       onClick={onClick}
-      className="mainMenu"
+      className="mainmenu"
     >
       <Contents
         icon={icon}
@@ -74,7 +74,7 @@ const FocusedMainMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
     <animated.button
       onClick={onClick}
-      className="mainMenu"
+      className="mainmenu"
       style={focusedMenuStyle}
     >
       <Contents

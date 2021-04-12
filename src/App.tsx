@@ -15,7 +15,7 @@ const App: FC = () => {
 
 const Container: FC = ({ children }) => {
   return (
-    <div className="Container">
+    <div className="container">
       {children}
     </div>
   );
