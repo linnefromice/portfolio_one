@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Avatar, Chip, makeStyles, Typography } from "@material-ui/core";
+import { Avatar, Box, Chip, makeStyles, Typography } from "@material-ui/core";
 import { animated, useSpring } from 'react-spring';
 
 const Wrapper: FC = ({ children }) => {
@@ -44,49 +44,49 @@ const Profile: FC = () => {
             <Typography variant={"h6"}>Linnefromice</Typography>
             <Typography variant={"body2"}>Hello, I&#39;m a Web Developer from Japan.</Typography>
           </div>
-          <div style={{ width: 2 }}/>
+          <Box width={2}/>
           <div className="skills-content">
             <Typography>SKILLS</Typography>
             <Typography variant="overline">Work</Typography>
-            <div style={{ padding: 0.25 }}>
-              <div>
+            <Box padding={0.25}>
+              <Box>
                 <Chip className={classes.chip} label="JavaScript" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="TypeScript" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="React" color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="Next.js" disabled color="primary" variant="outlined"/>
-              </div>
-              <div>
+              </Box>
+              <Box>
                 <Chip className={classes.chip} label="Java" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Ruby" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Spring" color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="Ruby on Rails" color="secondary" variant="outlined"/>
-              </div>
-              <div>
+              </Box>
+              <Box>
                 <Chip className={classes.chip} label="Oracle" color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="MySQL" color="secondary" variant="outlined"/>
-              </div>
-              <div>
+              </Box>
+              <Box>
                 <Chip className={classes.chip} label="Docker" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Kubernetes" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Terraform" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="AWS" disabled color="primary" variant="outlined"/>
-              </div>
-            </div>
+              </Box>
+            </Box>
             <Typography variant="overline">Private</Typography>
-            <div style={{ padding: 0.25 }}>
-              <div>
+            <Box padding={0.25}>
+              <Box>
                 <Chip className={classes.chip} label="Dart" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Vue" color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="Kotlin" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Flutter" color="secondary" variant="outlined"/>
-              </div>
-              <div>
+              </Box>
+              <Box>
                 <Chip className={classes.chip} label="Go" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Spring Boot" color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="Firebase" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="GCP" disabled color="primary" variant="outlined"/>
-              </div>
-            </div>
+              </Box>
+            </Box>
           </div>
         </div>
       </div>
