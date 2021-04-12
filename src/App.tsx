@@ -1,4 +1,4 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC } from 'react';
 import './App.scss';
 import Device from './component/device';
 import Content from './component/content';
@@ -13,12 +13,9 @@ const App: FC = () => {
   );
 }
 
-type Props = {
-  children: ReactNode;
-}
-const Container: FC<Props> = ({ children }) => {
+const Container: FC = ({ children }) => {
   return (
-    <div className="Container">
+    <div className="container">
       {children}
     </div>
   );

@@ -1,8 +1,5 @@
-import React, { FC, ReactNode } from 'react';
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from '@material-ui/core/ListItemText';
+import React, { FC } from 'react';
+import { List, ListItem, ListItemAvatar, ListItemText } from "@material-ui/core"
 import { GiSoccerBall } from 'react-icons/gi';
 import { MdRadio, MdMovie, MdMusicNote } from 'react-icons/md';
 import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } from 'react-icons/fa';
@@ -10,10 +7,7 @@ import { FaGamepad, FaHeart, FaBasketballBall, FaFootballBall, FaChessKing } fro
 import { animated, useSpring } from 'react-spring';
 import { makeStyles } from '@material-ui/core';
 
-type Props = {
-  children: ReactNode;
-}
-const Wrapper: FC<Props> = ({ children }) => {
+const Wrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
     display: "flex",
     justifyContent: "center",
@@ -30,7 +24,12 @@ const Wrapper: FC<Props> = ({ children }) => {
   );
 }
 
-const hobbyListOne = [
+type Hobby = {
+  icon: JSX.Element;
+  primary: string;
+  secondary: string;
+}
+const hobbyListOne: Hobby[] = [
   {
     icon: <GiSoccerBall/>,
     primary: "Soccer",
@@ -58,7 +57,7 @@ const hobbyListOne = [
   },
 
 ];
-const hobbyListTwo = [
+const hobbyListTwo: Hobby[] = [
   {
     icon: <FaGamepad/>,
     primary: "TV Game",
@@ -93,53 +92,41 @@ const useStyles = makeStyles({
   }
 });
 
-const Hobby: FC = () => {
+type HobbyListProps = {
+  hobbyList: Hobby[]
+}
+const HobbyList: FC<HobbyListProps> = ({ hobbyList }) => {
   const classes = useStyles();
+  return (
+    <List>
+      {hobbyList.map((value, index) => (
+        <ListItem
+          key={`hobbyList.${index}`}
+          classes={{
+            gutters: classes.listItemStyle
+          }}
+          alignItems="flex-start"
+        >
+          <ListItemAvatar>{value.icon}</ListItemAvatar>
+          <ListItemText
+            classes={{
+              primary: classes.primaryTextStyle,
+              secondary: classes.secondaryTextStyle,
+            }}
+            primary={value.primary}
+            secondary={value.secondary}
+          />
+        </ListItem>
+      ))}
+    </List>
+  )
+}
 
+const Hobby: FC = () => {
   return (
     <Wrapper>
-      <List>
-        {hobbyListOne.map((value, index) => (
-          <ListItem
-            key={`hobby.list_one.${index}`}
-            classes={{
-              gutters: classes.listItemStyle
-            }}
-            alignItems="flex-start"
-          >
-            <ListItemAvatar>{value.icon}</ListItemAvatar>
-            <ListItemText
-              classes={{
-                primary: classes.primaryTextStyle,
-                secondary: classes.secondaryTextStyle,
-              }}
-              primary={value.primary}
-              secondary={value.secondary}
-            />
-          </ListItem>
-        ))}
-      </List>
-      <List>
-        {hobbyListTwo.map((value, index) => (
-          <ListItem
-            key={`hobby.list_two.${index}`}
-            classes={{
-              gutters: classes.listItemStyle
-            }}
-            alignItems="flex-start"
-          >
-            <ListItemAvatar>{value.icon}</ListItemAvatar>
-            <ListItemText
-              classes={{
-                primary: classes.primaryTextStyle,
-                secondary: classes.secondaryTextStyle,
-              }}
-              primary={value.primary}
-              secondary={value.secondary}
-            />
-          </ListItem>
-        ))}
-      </List>
+      <HobbyList hobbyList={hobbyListOne} />
+      <HobbyList hobbyList={hobbyListTwo} />
     </Wrapper>
   );
 }

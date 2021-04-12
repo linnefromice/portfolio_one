@@ -1,17 +1,9 @@
-import React, { FC, ReactNode } from 'react';
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import Divider from '@material-ui/core/Divider';
-import Chip from '@material-ui/core/Chip';
-import IconButton from '@material-ui/core/IconButton';
+import React, { FC } from 'react';
+import { Card, CardContent, Chip, Divider, IconButton, Typography } from "@material-ui/core";
 import { FaGithub } from 'react-icons/fa';
 import { animated, useSpring } from 'react-spring';
 
-type Props = {
-  children: ReactNode;
-}
-const Wrapper: FC<Props> = ({ children }) => {
+const Wrapper: FC = ({ children }) => {
   const animatedStyle = useSpring({
     display: "flex",
     justifyContent: "center",

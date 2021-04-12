@@ -1,4 +1,4 @@
-.mainMenu {
+.mainmenu {
   position: relative;
   margin: 1% 3%;
   display: flex;
@@ -6,10 +6,10 @@
   justify-content: center;
   align-items: center;
 }
-.mainMenu > .mainMenuIcon {
+.mainmenu > .mainmenu-icon {
   height: 80%;
 }
-.mainMenu > .mainMenuName {
+.mainmenu > .mainmenu-name {
   height: 20%;
   text-align: center;
 }

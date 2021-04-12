@@ -1,8 +1,5 @@
 import React, { FC } from 'react';
-import CardMedia from "@material-ui/core/CardMedia";
-import Typography from "@material-ui/core/Typography";
-import Chip from '@material-ui/core/Chip';
-import IconButton from '@material-ui/core/IconButton';
+import { CardMedia, Chip, IconButton, Typography } from "@material-ui/core";
 import { FaGithub, FaLink, FaWikipediaW } from 'react-icons/fa';
 import InfoBase from './info_base';
 

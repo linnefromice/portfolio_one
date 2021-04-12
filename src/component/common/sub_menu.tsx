@@ -38,10 +38,10 @@ type ContentsProps = {
 const Contents: FC<ContentsProps> = ({ icon, name }) => {
   return (
     <>
-      <div className="subMenuIcon">
+      <div className="submenu-icon">
         {icon}
       </div>
-      <div className="subMenuName">{name}</div>
+      <div className="submenu-name">{name}</div>
     </>
   )
 }
@@ -58,7 +58,7 @@ const SubMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
     <StyledButton
       onClick={onClick}
-      className="subMenu"
+      className="submenu"
     >
       <Contents
         icon={icon}
@@ -73,7 +73,7 @@ const FocusedSubMenu: FC<Props> = ({icon, name, onClick}) => {
   return (
     <animated.button
       onClick={onClick}
-      className="subMenu"
+      className="submenu"
       style={focusedMenuStyle}
     >
       <Contents

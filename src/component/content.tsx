@@ -5,7 +5,6 @@ import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
 
 import { MainMenu, FocusedMainMenu } from './common/main_menu.jsx';
 import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
-
 import Profile from './contents/profile';
 import WorkExperience from './contents/work_experience';
 import Hobby from './contents/hobby';
@@ -112,7 +111,7 @@ type MainMenuListProps = {
 }
 const MainMenuList: FC<MainMenuListProps> = ({focusedIndex, selectMenu, menuList}) => {
   return (
-    <div className="wrapperMainMenu">
+    <div className="wrapper-mainmenu">
       {
         menuList.map((value, index) => {
           if (index === focusedIndex) {
@@ -146,7 +145,7 @@ type SubMenuListProps = {
 }
 const SubMenuList: FC<SubMenuListProps> = ({focusedIndex, selectMenu, menuList}) => {
   return (
-    <div className="wrapperSubMenu">
+    <div className="wrapper-submenu">
       {
         menuList.map((value, index) => {
           if (index === focusedIndex) {
@@ -223,7 +222,7 @@ const Content: FC = () => {
     <>
       <MainMenuList focusedIndex={focusedMainMenuIndex} selectMenu={selectMainMenu} menuList={mainMenuList} />
       <SubMenuList focusedIndex={focusedSubMenuIndex} selectMenu={selectSubMenu} menuList={mainMenuList[focusedMainMenuIndex].subMenuList} />
-      <div className="wrapperContent">
+      <div className="wrapper-content">
         {mainMenuList[focusedMainMenuIndex].subMenuList[focusedSubMenuIndex].content}
       </div>
     </>

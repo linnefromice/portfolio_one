@@ -1,4 +1,4 @@
-.wrapperMainMenu {
+.wrapper-mainmenu {
   position: absolute;
   top: 5vh;
   left: 0;
@@ -9,7 +9,7 @@
   height: 20vh;
 }
 
-.wrapperSubMenu {
+.wrapper-submenu {
   position: absolute;
   top: 30vh;
   left: 0;
@@ -20,7 +20,7 @@
   width: 15vw;
 }
 
-.wrapperContent {
+.wrapper-content {
   position: absolute;
   top: 25vh;
   left: 15vw;
@@ -34,6 +34,6 @@
   scrollbar-width: none;
 }
 /* Chrome, Safari 対応 */
-.wrapperContent::-webkit-scrollbar {
+.wrapper-content::-webkit-scrollbar {
   display:none;
 }
