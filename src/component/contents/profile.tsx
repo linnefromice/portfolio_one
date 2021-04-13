@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 import { Avatar, Box, Chip, makeStyles, Typography } from "@material-ui/core";
+import { FaIdCardAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FiAtSign } from 'react-icons/fi';
 import { animated, useSpring } from 'react-spring';
 
 const Wrapper: FC = ({ children }) => {
@@ -9,6 +11,7 @@ const Wrapper: FC = ({ children }) => {
     alignItems: "center",
     flexDirection: "column",
     opacity: "1",
+    width: "100%",
     from: { opacity: "0" },
   });
 
@@ -36,15 +39,42 @@ const Profile: FC = () => {
       <div className="wrapper-profile-card">
         <div className="wrapper-profile-card-content">
           <div className="profile-content">
-            <Typography variant={"h6"}>About Me</Typography>
             <Avatar
               src="/contents/icon_account_resize.jpg"
               className={classes.avatar}
             />
-            <Typography variant={"h6"}>Linnefromice</Typography>
-            <Typography variant={"body2"}>Hello, I&#39;m a Web Developer from Japan.</Typography>
+            <Typography variant={"h6"}>Arata</Typography>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <FiAtSign />
+              <Typography variant={"subtitle2"}>linnefromice</Typography>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <FaIdCardAlt />
+              <Typography variant={"body2"}>Web Developer</Typography>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <FaMapMarkerAlt />
+              <Typography variant={"body2"}>Tokyo, Japan</Typography>
+            </Box>
           </div>
-          <Box width={2}/>
           <div className="skills-content">
             <Typography>SKILLS</Typography>
             <Typography variant="overline">Work</Typography>
