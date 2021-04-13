@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
-import { Avatar, Box, Chip, makeStyles, Typography } from "@material-ui/core";
+import { Avatar, Box, Chip, Divider, Link, makeStyles, Typography } from "@material-ui/core";
+import { FaIdCardAlt, FaMapMarkerAlt, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FiAtSign } from 'react-icons/fi';
 import { animated, useSpring } from 'react-spring';
 
 const Wrapper: FC = ({ children }) => {
@@ -9,6 +11,7 @@ const Wrapper: FC = ({ children }) => {
     alignItems: "center",
     flexDirection: "column",
     opacity: "1",
+    width: "100%",
     from: { opacity: "0" },
   });
 
@@ -36,15 +39,98 @@ const Profile: FC = () => {
       <div className="wrapper-profile-card">
         <div className="wrapper-profile-card-content">
           <div className="profile-content">
-            <Typography variant={"h6"}>About Me</Typography>
             <Avatar
               src="/contents/icon_account_resize.jpg"
               className={classes.avatar}
             />
-            <Typography variant={"h6"}>Linnefromice</Typography>
-            <Typography variant={"body2"}>Hello, I&#39;m a Web Developer from Japan.</Typography>
+            <Typography variant={"h6"}>Arata</Typography>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Box margin={0.25}>
+                <FiAtSign />
+              </Box>
+              <Box margin={0.25}>
+                <Typography variant={"body2"}>linnefromice</Typography>
+              </Box>
+            </Box>
+            <Box width="100%">
+              <Divider/>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Box margin={0.25}>
+                <FaIdCardAlt />
+              </Box>
+              <Box margin={0.25}>
+                <Typography variant={"body2"}>Web Developer</Typography>
+              </Box>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Box margin={0.25}>
+                <FaMapMarkerAlt />
+              </Box>
+              <Box margin={0.25}>
+                <Typography variant={"body2"}>Tokyo, Japan</Typography>
+              </Box>
+            </Box>
+            <Box width="100%">
+              <Divider/>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Typography>I also like Flutter.</Typography>
+            </Box>
+            <Box width="100%">
+              <Divider/>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="space-around"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Box margin={0.5}>
+                <Link
+                  color="inherit"
+                  target="_blank"
+                  href="https://github.com/linnefromice"
+                >
+                  <FaGithub size={28}/>
+                </Link>
+              </Box>
+              <Box margin={0.5}>
+                <Link
+                  color="inherit"
+                  target="_blank"
+                  href="https://twitter.com/linnefromice"
+                >
+                  <FaTwitter size={28}/>
+                </Link>
+              </Box>
+            </Box>
           </div>
-          <Box width={2}/>
           <div className="skills-content">
             <Typography>SKILLS</Typography>
             <Typography variant="overline">Work</Typography>
