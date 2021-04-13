@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Avatar, Box, Chip, Divider, makeStyles, Typography } from "@material-ui/core";
+import { Avatar, Box, Chip, Divider, Link, makeStyles, Typography } from "@material-ui/core";
 import { FaIdCardAlt, FaMapMarkerAlt, FaGithub, FaTwitter } from 'react-icons/fa';
 import { FiAtSign } from 'react-icons/fi';
 import { animated, useSpring } from 'react-spring';
@@ -112,10 +112,22 @@ const Profile: FC = () => {
               margin={0.25}
             >
               <Box margin={0.5}>
-                <FaGithub size={28}/>
+                <Link
+                  color="inherit"
+                  target="_blank"
+                  href="https://github.com/linnefromice"
+                >
+                  <FaGithub size={28}/>
+                </Link>
               </Box>
               <Box margin={0.5}>
-                <FaTwitter size={28}/>
+                <Link
+                  color="inherit"
+                  target="_blank"
+                  href="https://twitter.com/linnefromice"
+                >
+                  <FaTwitter size={28}/>
+                </Link>
               </Box>
             </Box>
           </div>
