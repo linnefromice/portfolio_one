@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Avatar, Box, Chip, makeStyles, Typography } from "@material-ui/core";
-import { FaIdCardAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { Avatar, Box, Chip, Divider, makeStyles, Typography } from "@material-ui/core";
+import { FaIdCardAlt, FaMapMarkerAlt, FaGithub, FaTwitter } from 'react-icons/fa';
 import { FiAtSign } from 'react-icons/fi';
 import { animated, useSpring } from 'react-spring';
 
@@ -54,6 +54,9 @@ const Profile: FC = () => {
               <FiAtSign />
               <Typography variant={"subtitle2"}>linnefromice</Typography>
             </Box>
+            <Box width="100%">
+              <Divider/>
+            </Box>
             <Box
               display="flex"
               justifyContent="flex-start"
@@ -73,6 +76,23 @@ const Profile: FC = () => {
             >
               <FaMapMarkerAlt />
               <Typography variant={"body2"}>Tokyo, Japan</Typography>
+            </Box>
+            <Box width="100%">
+              <Divider/>
+            </Box>
+            <Box
+              display="flex"
+              justifyContent="space-around"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Box margin={0.5}>
+                <FaGithub />
+              </Box>
+              <Box margin={0.5}>
+                <FaTwitter />
+              </Box>
             </Box>
           </div>
           <div className="skills-content">
