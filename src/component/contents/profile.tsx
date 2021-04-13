@@ -52,7 +52,7 @@ const Profile: FC = () => {
               margin={0.25}
             >
               <FiAtSign />
-              <Typography variant={"subtitle2"}>linnefromice</Typography>
+              <Typography variant={"body2"}>linnefromice</Typography>
             </Box>
             <Box width="100%">
               <Divider/>
@@ -88,10 +88,10 @@ const Profile: FC = () => {
               margin={0.25}
             >
               <Box margin={0.5}>
-                <FaGithub />
+                <FaGithub size={28}/>
               </Box>
               <Box margin={0.5}>
-                <FaTwitter />
+                <FaTwitter size={28}/>
               </Box>
             </Box>
           </div>
