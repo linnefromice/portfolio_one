@@ -82,6 +82,18 @@ const Profile: FC = () => {
             </Box>
             <Box
               display="flex"
+              justifyContent="flex-start"
+              alignItems="center"
+              flexDirection="row"
+              margin={0.25}
+            >
+              <Typography>I also like Flutter.</Typography>
+            </Box>
+            <Box width="100%">
+              <Divider/>
+            </Box>
+            <Box
+              display="flex"
               justifyContent="space-around"
               alignItems="center"
               flexDirection="row"
