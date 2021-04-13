@@ -51,8 +51,12 @@ const Profile: FC = () => {
               flexDirection="row"
               margin={0.25}
             >
-              <FiAtSign />
-              <Typography variant={"body2"}>linnefromice</Typography>
+              <Box margin={0.25}>
+                <FiAtSign />
+              </Box>
+              <Box margin={0.25}>
+                <Typography variant={"body2"}>linnefromice</Typography>
+              </Box>
             </Box>
             <Box width="100%">
               <Divider/>
@@ -64,8 +68,12 @@ const Profile: FC = () => {
               flexDirection="row"
               margin={0.25}
             >
-              <FaIdCardAlt />
-              <Typography variant={"body2"}>Web Developer</Typography>
+              <Box margin={0.25}>
+                <FaIdCardAlt />
+              </Box>
+              <Box margin={0.25}>
+                <Typography variant={"body2"}>Web Developer</Typography>
+              </Box>
             </Box>
             <Box
               display="flex"
@@ -74,8 +82,12 @@ const Profile: FC = () => {
               flexDirection="row"
               margin={0.25}
             >
-              <FaMapMarkerAlt />
-              <Typography variant={"body2"}>Tokyo, Japan</Typography>
+              <Box margin={0.25}>
+                <FaMapMarkerAlt />
+              </Box>
+              <Box margin={0.25}>
+                <Typography variant={"body2"}>Tokyo, Japan</Typography>
+              </Box>
             </Box>
             <Box width="100%">
               <Divider/>
