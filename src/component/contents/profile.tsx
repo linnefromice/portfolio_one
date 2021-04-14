@@ -139,7 +139,7 @@ const Profile: FC = () => {
                 <Chip className={classes.chip} label="JavaScript" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="TypeScript" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="React" color="secondary" variant="outlined"/>
-                <Chip className={classes.chip} label="Next.js" disabled color="primary" variant="outlined"/>
+                <Chip className={classes.chip} label="Next.js" disabled color="secondary" variant="outlined"/>
               </Box>
               <Box>
                 <Chip className={classes.chip} label="Java" color="primary" variant="outlined"/>
@@ -169,6 +169,8 @@ const Profile: FC = () => {
               <Box>
                 <Chip className={classes.chip} label="Go" color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Spring Boot" color="secondary" variant="outlined"/>
+                <Chip className={classes.chip} label="C#" disabled color="primary" variant="outlined"/>
+                <Chip className={classes.chip} label="Blazor" disabled color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="Firebase" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="GCP" disabled color="primary" variant="outlined"/>
               </Box>
