@@ -70,7 +70,7 @@ const WorkExperience: FC = () => {
                   <Chip size="small" color="default" variant="outlined" label="SUB"/>
                 </Box>
                 <Typography display="block" variant="body2">In-house system improvement</Typography>
-                <Typography display="block" variant="body2">- JavaScript, GoogleAppScript, BigQuery, Kintone...</Typography>
+                <Typography display="block" variant="body2">- JavaScript, GoogleAppScript, BigQuery, Kintone, board, Mailchimp...</Typography>
               </Fragment>
             }
           />
