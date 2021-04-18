@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useState } from 'react';
 import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
-import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
+import { RiProfileLine, RiFlutterFill } from 'react-icons/ri';
 
 import { MainMenu, FocusedMainMenu } from './common/main_menu.jsx';
 import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
@@ -47,17 +47,17 @@ const accountMenuList: SubMenuType[] = [
 ];
 
 const study_record_app: SubMenuType = {
-  icon: <RiFlutterLine size="75%"/>,
+  icon: <RiFlutterFill size="75%"/>,
   name: "study_record_app",
   content: <InfoStudyRecordApp/>,
 };
 const ff_quiz_app: SubMenuType = {
-  icon: <RiFlutterLine size="60%"/>,
+  icon: <RiFlutterFill size="60%"/>,
   name: "ff_quiz_app",
   content: <InfoFFQuizApp/>,
 };
 const marvel_app: SubMenuType = {
-  icon: <RiFlutterLine size="60%"/>,
+  icon: <RiFlutterFill size="60%"/>,
   name: "marvel_app",
   content: <InfoMarvelApp/>,
 };
