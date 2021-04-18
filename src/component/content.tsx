@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useState } from 'react';
 import { FaCode, FaLink } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast, MdSmartphone, MdWebAsset } from 'react-icons/md';
-import { RiProfileLine, RiFlutterFill } from 'react-icons/ri';
+import { RiProfileLine, RiFlutterFill, RiVuejsFill } from 'react-icons/ri';
 
 import { MainMenu, FocusedMainMenu } from './common/main_menu.jsx';
 import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
@@ -12,6 +12,7 @@ import InfoStudyRecordApp from './contents/products/info_study_record_app';
 import InfoFFQuizApp from './contents/products/info_ff_quiz_app';
 import InfoMarvelApp from './contents/products/info_marvel_app';
 import InfoOtherProducts from './contents/products/info_other_products';
+import InfoVuetifyNewsApp from './contents/products/info_vuetify_news_app.js';
 // import './content.scss';
 
 type SubMenuType = {
@@ -67,12 +68,18 @@ const productMobileList: SubMenuType[] = [
   marvel_app,
 ];
 
+const vuetify_news_app: SubMenuType = {
+  icon: <RiVuejsFill size="60%"/>,
+  name: "vuetify_news_app",
+  content: <InfoVuetifyNewsApp/>
+};
 const other_products: SubMenuType = {
   icon: <FaCode size="60%"/>,
   name: "Others",
   content: <InfoOtherProducts/>
 };
 const productWebList: SubMenuType[] = [
+  vuetify_news_app,
   other_products,
 ];
 

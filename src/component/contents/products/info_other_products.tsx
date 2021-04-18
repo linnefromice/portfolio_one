@@ -21,72 +21,6 @@ const Wrapper: FC = ({ children }) => {
   );
 }
 
-const VuetifyNewsAppCard: FC = () => {
-  return (
-    <Card
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        backgroundColor: "transparent",
-        borderRadius: "2rem",
-        minHeight: "100%"
-      }}
-    >
-      <CardContent>
-        <Typography variant="h6">
-          vuetify-news-app
-        </Typography>
-        <Typography color="textSecondary">
-          <span>We can get global news information, using NewYork Times API.<br/></span>
-          <span>Designed by Vuetify.<br/></span>
-        </Typography>
-        <Divider/>
-        <div style={{ padding: 5 }}>
-          <Chip
-            style={{ margin: 1 }}
-            label="Vue"
-            color="primary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="vuetify"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="vue-router"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="axios"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="fortawesome"
-            color="secondary"
-            variant="outlined"
-          />
-        </div>
-        <Divider/>
-        <div style={{ padding: 5 }}>
-          <IconButton
-            style={{ margin: 1 }}
-            href="https://github.com/linnefromice/vuetify-news-app"
-          >
-            <FaGithub/>
-          </IconButton>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
 const SlideVueCard: FC = () => {
   return (
     <Card
@@ -156,7 +90,6 @@ const SlideVueCard: FC = () => {
 const InfoOtherProducts: FC = () => {
   return (
     <Wrapper>
-      <VuetifyNewsAppCard/>
       <SlideVueCard/>
     </Wrapper>
   );
