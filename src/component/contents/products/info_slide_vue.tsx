@@ -82,7 +82,7 @@ const Images: FC = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Typography>NO IMAGE</Typography>
+      <Typography>Please wait...</Typography>
     </Box>
   )
 }
