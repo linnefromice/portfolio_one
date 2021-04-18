@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { Card, CardContent, Chip, Divider, IconButton, Typography } from "@material-ui/core";
 import { FaGithub } from 'react-icons/fa';
+import { GrDeploy } from 'react-icons/gr';
 import { animated, useSpring } from 'react-spring';
 
 const Wrapper: FC = ({ children }) => {
@@ -21,7 +22,7 @@ const Wrapper: FC = ({ children }) => {
   );
 }
 
-const VuetifyNewsAppCard: FC = () => {
+const AppTweet: FC = () => {
   return (
     <Card
       style={{
@@ -34,42 +35,30 @@ const VuetifyNewsAppCard: FC = () => {
     >
       <CardContent>
         <Typography variant="h6">
-          vuetify-news-app
+          app_tweet
         </Typography>
         <Typography color="textSecondary">
-          <span>We can get global news information, using NewYork Times API.<br/></span>
-          <span>Designed by Vuetify.<br/></span>
+          <span>client/server app like twitter.<br/></span>
+          <span>Use react/rails/docker etc...<br/></span>
         </Typography>
         <Divider/>
         <div style={{ padding: 5 }}>
           <Chip
             style={{ margin: 1 }}
-            label="Vue"
+            label="React"
+            color="secondary"
+            variant="outlined"
+          />
+          <Chip
+            style={{ margin: 1 }}
+            label="Ruby on Rails"
+            color="secondary"
+            variant="outlined"
+          />
+          <Chip
+            style={{ margin: 1 }}
+            label="Docker"
             color="primary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="vuetify"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="vue-router"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="axios"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="fortawesome"
-            color="secondary"
             variant="outlined"
           />
         </div>
@@ -77,7 +66,7 @@ const VuetifyNewsAppCard: FC = () => {
         <div style={{ padding: 5 }}>
           <IconButton
             style={{ margin: 1 }}
-            href="https://github.com/linnefromice/vuetify-news-app"
+            href="https://github.com/linnefromice/app_tweet_01"
           >
             <FaGithub/>
           </IconButton>
@@ -87,7 +76,7 @@ const VuetifyNewsAppCard: FC = () => {
   );
 }
 
-const SlideVueCard: FC = () => {
+const CreditCardForm: FC = () => {
   return (
     <Card
       style={{
@@ -100,41 +89,29 @@ const SlideVueCard: FC = () => {
     >
       <CardContent>
         <Typography variant="h6">
-          slide-vue
+          credit_card_form
         </Typography>
         <Typography color="textSecondary">
-          <span>You can make slides with Vue Framework..<br/></span>
-          <span>Core function provided by marp plugin.<br/></span>
+          <span>Credit card form using Nextjs.<br/></span>
+          <span>Idea from medium &apos;Here Are 6 Front-End Challenges to Code&apos;.<br/></span>
         </Typography>
         <Divider/>
         <div style={{ padding: 5 }}>
           <Chip
             style={{ margin: 1 }}
-            label="Vue"
-            color="primary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="vuetify"
+            label="Next.js"
             color="secondary"
             variant="outlined"
           />
           <Chip
             style={{ margin: 1 }}
-            label="marp-vue"
+            label="css modules"
             color="secondary"
             variant="outlined"
           />
           <Chip
             style={{ margin: 1 }}
-            label="marp-core"
-            color="secondary"
-            variant="outlined"
-          />
-          <Chip
-            style={{ margin: 1 }}
-            label="vue-awesome-swiper"
+            label="sass"
             color="secondary"
             variant="outlined"
           />
@@ -143,9 +120,15 @@ const SlideVueCard: FC = () => {
         <div style={{ padding: 5 }}>
           <IconButton
             style={{ margin: 1 }}
-            href="https://github.com/linnefromice/slide-vue"
+            href="https://github.com/linnefromice/credit_card_form_nextjs_01"
           >
             <FaGithub/>
+          </IconButton>
+          <IconButton
+            style={{ margin: 1 }}
+            href="https://linnefromice.github.io/credit_card_form_nextjs_01/"
+          >
+            <GrDeploy/>
           </IconButton>
         </div>
       </CardContent>
@@ -156,8 +139,8 @@ const SlideVueCard: FC = () => {
 const InfoOtherProducts: FC = () => {
   return (
     <Wrapper>
-      <VuetifyNewsAppCard/>
-      <SlideVueCard/>
+      <AppTweet/>
+      <CreditCardForm/>
     </Wrapper>
   );
 }

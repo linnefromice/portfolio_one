@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useState } from 'react';
-import { FaCode, FaLink, FaGithub } from 'react-icons/fa';
-import { MdAccountCircle, MdWork, MdFreeBreakfast } from 'react-icons/md';
-import { RiProfileLine, RiFlutterLine } from 'react-icons/ri';
+import { FaCode } from 'react-icons/fa';
+import { MdAccountCircle, MdWork, MdFreeBreakfast, MdSmartphone, MdWebAsset } from 'react-icons/md';
+import { RiProfileLine, RiFlutterFill, RiVuejsFill } from 'react-icons/ri';
 
 import { MainMenu, FocusedMainMenu } from './common/main_menu.jsx';
 import { SubMenu, FocusedSubMenu } from './common/sub_menu.jsx';
@@ -12,6 +12,8 @@ import InfoStudyRecordApp from './contents/products/info_study_record_app';
 import InfoFFQuizApp from './contents/products/info_ff_quiz_app';
 import InfoMarvelApp from './contents/products/info_marvel_app';
 import InfoOtherProducts from './contents/products/info_other_products';
+import InfoVuetifyNewsApp from './contents/products/info_vuetify_news_app.js';
+import InfoSlideVue from './contents/products/info_slide_vue.js';
 // import './content.scss';
 
 type SubMenuType = {
@@ -47,40 +49,46 @@ const accountMenuList: SubMenuType[] = [
 ];
 
 const study_record_app: SubMenuType = {
-  icon: <RiFlutterLine size="75%"/>,
+  icon: <RiFlutterFill size="75%"/>,
   name: "study_record_app",
   content: <InfoStudyRecordApp/>,
 };
 const ff_quiz_app: SubMenuType = {
-  icon: <RiFlutterLine size="60%"/>,
+  icon: <RiFlutterFill size="60%"/>,
   name: "ff_quiz_app",
   content: <InfoFFQuizApp/>,
 };
 const marvel_app: SubMenuType = {
-  icon: <RiFlutterLine size="60%"/>,
+  icon: <RiFlutterFill size="60%"/>,
   name: "marvel_app",
   content: <InfoMarvelApp/>,
 };
+const productMobileList: SubMenuType[] = [
+  study_record_app,
+  ff_quiz_app,
+  marvel_app,
+];
+
+const vuetify_news_app: SubMenuType = {
+  icon: <RiVuejsFill size="60%"/>,
+  name: "vuetify_news_app",
+  content: <InfoVuetifyNewsApp/>
+};
+const slide_vue: SubMenuType = {
+  icon: <RiVuejsFill size="60%"/>,
+  name: "slide_vue",
+  content: <InfoSlideVue/>
+};
+
 const other_products: SubMenuType = {
   icon: <FaCode size="60%"/>,
   name: "Others",
   content: <InfoOtherProducts/>
 };
-const productMenuList: SubMenuType[] = [
-  study_record_app,
-  ff_quiz_app,
-  marvel_app,
+const productWebList: SubMenuType[] = [
+  vuetify_news_app,
+  slide_vue,
   other_products,
-];
-
-const link_github: SubMenuType = {
-  icon: <FaGithub size="80%"/>,
-  name: "Github",
-  content: <div></div>,
-  onClick: () => window.open('https://github.com/linnefromice', '_blank')
-}
-const linkMenuList: SubMenuType[] = [
-  link_github,
 ];
 
 const main_account_information: MainMenuType = {
@@ -88,20 +96,20 @@ const main_account_information: MainMenuType = {
   name: "Account Information",
   subMenuList: accountMenuList,
 };
-const main_product: MainMenuType = {
-  icon: <FaCode size="100%"/>,
-  name: "Product(private)",
-  subMenuList: productMenuList,
+const product_mobile: MainMenuType = {
+  icon: <MdSmartphone size="100%"/>,
+  name: "Product Mobile",
+  subMenuList: productMobileList,
 };
-const main_links: MainMenuType = {
-  icon: <FaLink size="100%"/>,
-  name: "Links",
-  subMenuList: linkMenuList
+const product_web: MainMenuType = {
+  icon: <MdWebAsset size="100%"/>,
+  name: "Product Web",
+  subMenuList: productWebList
 };
 const mainMenuList: MainMenuType[] = [
   main_account_information,
-  main_product,
-  main_links
+  product_mobile,
+  product_web
 ];
 
 type MainMenuListProps = {
