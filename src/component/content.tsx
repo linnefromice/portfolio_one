@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from 'react';
-import { FaCode, FaLink } from 'react-icons/fa';
+import { FaCode } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast, MdSmartphone, MdWebAsset } from 'react-icons/md';
 import { RiProfileLine, RiFlutterFill, RiVuejsFill } from 'react-icons/ri';
 
