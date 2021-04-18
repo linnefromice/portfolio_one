@@ -13,6 +13,7 @@ import InfoFFQuizApp from './contents/products/info_ff_quiz_app';
 import InfoMarvelApp from './contents/products/info_marvel_app';
 import InfoOtherProducts from './contents/products/info_other_products';
 import InfoVuetifyNewsApp from './contents/products/info_vuetify_news_app.js';
+import InfoSlideVue from './contents/products/info_slide_vue.js';
 // import './content.scss';
 
 type SubMenuType = {
@@ -73,6 +74,12 @@ const vuetify_news_app: SubMenuType = {
   name: "vuetify_news_app",
   content: <InfoVuetifyNewsApp/>
 };
+const slide_vue: SubMenuType = {
+  icon: <RiVuejsFill size="60%"/>,
+  name: "slide_vue",
+  content: <InfoSlideVue/>
+};
+
 const other_products: SubMenuType = {
   icon: <FaCode size="60%"/>,
   name: "Others",
@@ -80,6 +87,7 @@ const other_products: SubMenuType = {
 };
 const productWebList: SubMenuType[] = [
   vuetify_news_app,
+  slide_vue,
   other_products,
 ];
 
