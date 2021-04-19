@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Chip, IconButton, Typography } from "@material-ui/core";
+import { Box, CardMedia, Chip, IconButton, Typography } from "@material-ui/core";
 import { FaGithub } from 'react-icons/fa';
 import { GrDeploy } from 'react-icons/gr';
 import InfoBase from './info_base';
@@ -77,12 +77,19 @@ const Links: FC = () => {
 const Images: FC = () => {
   return (
     <Box
-      m={5}
       display="flex"
       justifyContent="center"
       alignItems="center"
-    >
-      <Typography>Please wait...</Typography>
+    >    
+      <CardMedia
+        style={{
+          padding: 1,
+          width: "30vw",
+          height: "25vh"
+        }}
+        image="/contents/vue_slide_ver1.gif"
+        title="Sample"
+      />
     </Box>
   )
 }
