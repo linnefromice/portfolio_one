@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Box, Chip, IconButton, Typography } from "@material-ui/core";
+import { Box, CardMedia, Chip, IconButton, Typography } from "@material-ui/core";
 import { FaGithub } from 'react-icons/fa';
 import { GrDeploy } from 'react-icons/gr';
 import { SiNewyorktimes } from 'react-icons/si';
@@ -84,12 +84,15 @@ const Links: FC = () => {
 const Images: FC = () => {
   return (
     <Box
-      m={5}
       display="flex"
       justifyContent="center"
       alignItems="center"
     >
-      <Typography>Please wait...</Typography>
+      <CardMedia
+        style={{ padding: 1, width: "30vw", height: "20vh" }}
+        image="/contents/vuetify_news_app_ver1.png"
+        title="Sample"
+      />
     </Box>
   )
 }
