@@ -80,7 +80,7 @@ const Images: FC = () => {
       display="flex"
       justifyContent="center"
       alignItems="center"
-    >    
+    >
       <CardMedia
         style={{
           padding: 1,

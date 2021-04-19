@@ -58,6 +58,11 @@ const ff_quiz_app: SubMenuType = {
   name: "ff_quiz_app",
   content: <InfoFFQuizApp/>,
 };
+const zenn_rss_feeder: SubMenuType = {
+  icon: <RiFlutterFill size="60%"/>,
+  name: "zenn_rss_feeder",
+  content: <>Please wait...</>,
+};
 const marvel_app: SubMenuType = {
   icon: <RiFlutterFill size="60%"/>,
   name: "marvel_app",
@@ -66,6 +71,7 @@ const marvel_app: SubMenuType = {
 const productMobileList: SubMenuType[] = [
   study_record_app,
   ff_quiz_app,
+  zenn_rss_feeder,
   marvel_app,
 ];
 
