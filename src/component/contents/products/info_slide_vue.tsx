@@ -84,8 +84,8 @@ const Images: FC = () => {
       <CardMedia
         style={{
           padding: 1,
-          width: "30vw",
-          height: "25vh"
+          width: "20vw",
+          height: "15vh"
         }}
         image="/contents/vue_slide_ver1.gif"
         title="Sample"

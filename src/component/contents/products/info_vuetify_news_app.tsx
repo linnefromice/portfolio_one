@@ -89,7 +89,11 @@ const Images: FC = () => {
       alignItems="center"
     >
       <CardMedia
-        style={{ padding: 1, width: "30vw", height: "20vh" }}
+        style={{
+          padding: 1,
+          width: "20vw",
+          height: "15vh"
+        }}
         image="/contents/vuetify_news_app_ver1.png"
         title="Sample"
       />
