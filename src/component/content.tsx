@@ -15,6 +15,7 @@ import InfoOtherProducts from './contents/products/info_other_products';
 import InfoVuetifyNewsApp from './contents/products/info_vuetify_news_app.js';
 import InfoSlideVue from './contents/products/info_slide_vue.js';
 import InfoAppTweet from './contents/products/info_app_tweet.js';
+import InfoZennRssFeeder from './contents/products/info_zenn_rss_feeder.js';
 // import './content.scss';
 
 type SubMenuType = {
@@ -62,7 +63,7 @@ const ff_quiz_app: SubMenuType = {
 const zenn_rss_feeder: SubMenuType = {
   icon: <RiFlutterFill size="60%"/>,
   name: "zenn_rss_feeder",
-  content: <>Please wait...</>,
+  content: <InfoZennRssFeeder/>,
 };
 const marvel_app: SubMenuType = {
   icon: <RiFlutterFill size="60%"/>,
