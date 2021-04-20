@@ -162,6 +162,7 @@ const Profile: FC = () => {
             <Box padding={0.25}>
               <Box>
                 <Chip className={classes.chip} label="Dart" color="primary" variant="outlined"/>
+                <Chip className={classes.chip} label="Deno" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Vue" color="secondary" variant="outlined"/>
                 <Chip className={classes.chip} label="Kotlin" disabled color="primary" variant="outlined"/>
                 <Chip className={classes.chip} label="Flutter" color="secondary" variant="outlined"/>

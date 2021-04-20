@@ -1,18 +1,18 @@
 import React, { FC } from 'react';
-import { Box, CardMedia, Chip, IconButton, Typography } from "@material-ui/core";
-import { FaGithub } from 'react-icons/fa';
-import { GrDeploy } from 'react-icons/gr';
+import { Box, Chip, IconButton, Typography } from "@material-ui/core";
+import { FaGithub, FaLink } from 'react-icons/fa';
 import InfoBase from './info_base';
 
 const Sentences: FC = () => {
   return (
     <>
       <Typography variant="h6">
-        slide-vue
+        zenn_rss_feeder
       </Typography>
       <Typography color="textSecondary">
-        <span>You can make slides with Vue Framework.<br/></span>
-        <span>Core function provided by marp plugin.<br/></span>
+        <span>Rss feeder for zenn.dev<br/></span>
+        <span>Select topic (techonology & theme) & display articles.<br/></span>
+        <span>Also, you can save favorite articles.<br/></span>
       </Typography>
     </>
   )
@@ -23,31 +23,25 @@ const Technologies: FC = () => {
     <>
       <Chip
         style={{ margin: 1 }}
-        label="Vue"
+        label="Dart"
         color="primary"
         variant="outlined"
       />
       <Chip
         style={{ margin: 1 }}
-        label="vuetify"
+        label="Flutter"
         color="secondary"
         variant="outlined"
       />
       <Chip
         style={{ margin: 1 }}
-        label="marp-vue"
+        label="sqflite"
         color="secondary"
         variant="outlined"
       />
       <Chip
         style={{ margin: 1 }}
-        label="marp-core"
-        color="secondary"
-        variant="outlined"
-      />
-      <Chip
-        style={{ margin: 1 }}
-        label="vue-awesome-swiper"
+        label="xml2json"
         color="secondary"
         variant="outlined"
       />
@@ -60,15 +54,15 @@ const Links: FC = () => {
     <>
       <IconButton
         style={{ margin: 1 }}
-        href="https://github.com/linnefromice/slide-vue"
+        href="https://github.com/linnefromice/zenn_rss_feeder"
       >
         <FaGithub/>
       </IconButton>
       <IconButton
         style={{ margin: 1 }}
-        href="https://linnefromice.github.io/slide-vue/"
+        href="https://zenn.dev/zenn/articles/zenn-feed-rss"
       >
-        <GrDeploy/>
+        <FaLink/>
       </IconButton>
     </>
   );
@@ -76,25 +70,13 @@ const Links: FC = () => {
 
 const Images: FC = () => {
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-    >
-      <CardMedia
-        style={{
-          padding: 1,
-          width: "20vw",
-          height: "15vh"
-        }}
-        image="/contents/vue_slide_ver1.gif"
-        title="Sample"
-      />
+    <Box m={1} display="flex" justifyContent="center" alignItems="center">
+      <Typography>Please wait...</Typography>
     </Box>
-  )
+  );
 }
 
-const InfoSlideVue: FC = () => {
+const InfoZennRssFeeder: FC = () => {
   return (
     <InfoBase
       sentences={<Sentences/>}
@@ -102,7 +84,7 @@ const InfoSlideVue: FC = () => {
       links={<Links/>}
       images={<Images/>}
     />
-  )
+  );
 }
 
-export default InfoSlideVue;
+export default InfoZennRssFeeder;
