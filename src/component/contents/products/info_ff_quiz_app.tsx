@@ -31,7 +31,7 @@ const Technologies: FC = () => {
       <Chip
         style={{ margin: 1 }}
         label="Flutter"
-        color="primary"
+        color="secondary"
         variant="outlined"
       />
     </>
