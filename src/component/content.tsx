@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from 'react';
-import { FaCode } from 'react-icons/fa';
+import { FaCode, FaReact } from 'react-icons/fa';
 import { MdAccountCircle, MdWork, MdFreeBreakfast, MdSmartphone, MdWebAsset } from 'react-icons/md';
 import { RiProfileLine, RiFlutterFill, RiVuejsFill } from 'react-icons/ri';
 
@@ -14,6 +14,7 @@ import InfoMarvelApp from './contents/products/info_marvel_app';
 import InfoOtherProducts from './contents/products/info_other_products';
 import InfoVuetifyNewsApp from './contents/products/info_vuetify_news_app.js';
 import InfoSlideVue from './contents/products/info_slide_vue.js';
+import InfoAppTweet from './contents/products/info_app_tweet.js';
 // import './content.scss';
 
 type SubMenuType = {
@@ -75,6 +76,11 @@ const productMobileList: SubMenuType[] = [
   marvel_app,
 ];
 
+const app_tweet: SubMenuType = {
+  icon: <FaReact size="60%"/>,
+  name: "app_tweet",
+  content: <InfoAppTweet/>
+};
 const vuetify_news_app: SubMenuType = {
   icon: <RiVuejsFill size="60%"/>,
   name: "vuetify_news_app",
@@ -85,13 +91,13 @@ const slide_vue: SubMenuType = {
   name: "slide_vue",
   content: <InfoSlideVue/>
 };
-
 const other_products: SubMenuType = {
   icon: <FaCode size="60%"/>,
   name: "Others",
   content: <InfoOtherProducts/>
 };
 const productWebList: SubMenuType[] = [
+  app_tweet,
   vuetify_news_app,
   slide_vue,
   other_products,
